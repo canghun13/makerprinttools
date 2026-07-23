@@ -545,7 +545,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 - 57개 공개 페이지의 공통 헤더에 Tools / Guides / About / Contact 순서와 /guides/ 링크를 확인했다.
 - 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots 영향 없음. Content QA로 홈페이지 기준 57개 페이지 도달성 유지.
-- 공개 HTTPS의 데스크톱·모바일 렌더링 점검 후 최종 커밋에 기록한다.
+- 공개 HTTPS QA PASS: Homepage(1440), Tools(1280), Guides hub(1024), 비교 페이지(390)에서 네 링크 순서·active state·가로 overflow를 확인했다. 390px에서는 Menu를 열어 Guides 링크가 표시되고 overflow 없이 동작함을 확인했다.
 
 ### 알려진 문제
 
@@ -568,7 +568,8 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ### 최근 커밋
 
+- `19cc053` — Add Guides to shared navigation
 - `6223848` — Add comparison and practical content cluster
 - `d471118` — Record content depth audit
 - `3638cd1` — Update index.html (사용자 Contact 수정, 보존)
-- 다음 커밋: Phase 7 공개 HTTPS QA와 최종 판정 기록
+- 다음 커밋: Header navigation 공개 QA 기록
