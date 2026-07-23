@@ -9,13 +9,16 @@
 
 ## Calculators
 - [3D Print Cost Calculator](https://makerprinttools.com/tools/cost/3d-print-cost-calculator/): Material, energy, labor, machine, and failure-adjusted cost
+- [Electricity Cost Calculator](https://makerprinttools.com/tools/cost/electricity-cost-calculator/): Print energy and cost from measured average wattage
 - [Filament Length to Weight Calculator](https://makerprinttools.com/tools/filament/length-weight-calculator/): Bidirectional filament length and mass conversion
 - [Filament Spool Remaining Calculator](https://makerprinttools.com/tools/filament/spool-remaining-calculator/): Remaining net mass and length from spool weights
+- [Filament Cost Calculator](https://makerprinttools.com/tools/filament/filament-cost-calculator/): Material-only cost with a waste allowance
 - [Layer Count Calculator](https://makerprinttools.com/tools/print-settings/layer-count-calculator/): Layer count with distinct first layer
 - [Volumetric Flow Calculator](https://makerprinttools.com/tools/print-settings/volumetric-flow-calculator/): Hotend flow demand and utilization
 - [Model Scale Calculator](https://makerprinttools.com/tools/geometry/model-scale-calculator/): Linear scale, cubic volume, and estimated weight
 - [Shrinkage Compensation Calculator](https://makerprinttools.com/tools/geometry/shrinkage-compensation-calculator/): CAD oversize from measured shrinkage
 - [Resin Cost Calculator](https://makerprinttools.com/tools/resin/resin-cost-calculator/): Resin volume, waste, cost, mass, and bottle yield
+- [3D Print Selling Price Calculator](https://makerprinttools.com/tools/business/3d-print-selling-price-calculator/): Price from production cost, fees, and target margin
 
 ## Notes
 - Calculator results are estimates and should be verified for safety-critical or commercial work.

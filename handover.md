@@ -414,9 +414,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Cloudflare DNS: 설정 완료
 - HTTPS: 정상
 - GA4: 발급 완료 (`G-T6DZFFQJP3`)
-- 초기 개발: **Phase 1 — Foundation & First Tools 구현 완료 (2026-07-23)**
-- 현재 공개 페이지 수: **13**
-- 현재 계산기 수: **8**
+- 초기 개발: **Phase 2 — Quality reinforcement & core cluster expansion 완료 (2026-07-23)**
+- 현재 공개 페이지 수: **16**
+- 현재 계산기 수: **11**
 - 가이드/레퍼런스 수: **0** (각 계산기 페이지에 공식·해석·예시 포함)
 - Search Console: 추후 연결 확인 필요
 
@@ -438,6 +438,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 모든 13개 공개 페이지에 GA4 `G-T6DZFFQJP3` 1회 구성(측정 ID 문자열 2회: loader/config)
 - `robots.txt`, 13 URL `sitemap.xml`, `llms.txt`
 - 계산기 정적 페이지 생성 스크립트 및 자동 QA 스크립트
+- Phase 2: 공개 HTTPS 기준 homepage, Tools hub, cost/resin calculator, About 반응형·overflow 점검
+- Phase 2: Filament Cost, Electricity Cost, 3D Print Selling Price Calculator 추가
+- Phase 2: Tools hub, sitemap, llms.txt를 11개 계산기 기준으로 동기화
 
 ### 중요한 설계 결정
 
@@ -458,9 +461,17 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - CSS 반응형 breakpoint: 800px / 520px, 고정 폭 대신 유동 grid와 `minmax(0, ...)`, 390px 전용 단일 열 적용
 - 시각 QA 제한: Codex in-app Browser가 `data:` 및 localhost URL을 보안 정책으로 차단하여 1440/1280/1024/390px 실제 스크린샷 검사는 이번 세션에서 수행 불가. 배포 직후 공개 HTTPS URL에서 동일 폭 수동 확인 필요.
 
+### Phase 2 QA 결과 (2026-07-23)
+
+- 자동 QA PASS: 16 HTML / 16 canonical / 16 sitemap URL
+- 11개 계산기 기본값 실제 공통 JS 실행 PASS
+- 공개 HTTPS 점검 PASS: 1440px Cost, 1280px Resin, 1024px Tools, 390px Homepage 및 About에서 가로 overflow 없음
+- 공개 Cost 페이지: GA ID 문자열 2개(loader/config), H1 1개, canonical, 기본 결과 `9.58` 확인
+- malformed HTML, duplicate id, internal link, accidental noindex, sitemap mismatch 없음
+
 ### 알려진 문제
 
-- 공개 배포 후 실제 브라우저 1440 / 1280 / 1024 / 390px 시각 샘플 확인 필요
+- 신규 Phase 2 페이지는 push·GitHub Pages 반영 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 샘플 확인 필요
 - Contact 이메일 `hello@makerprinttools.com`의 실제 수신 설정은 저장소 밖에서 확인 필요
 - Search Console 연결 상태 미확인
 
@@ -473,9 +484,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ## 15. 다음 작업
 
-**Phase 2 우선순위**
+**Phase 3 우선순위**
 
-1. GitHub Pages 배포 직후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 QA 및 5개 이상 계산기 상호작용 재검증
+1. GitHub Pages 배포 직후 신규 Phase 2 페이지를 포함해 1440 / 1280 / 1024 / 390px 시각 QA 및 5개 이상 계산기 상호작용 재검증
 2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
 3. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
 4. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
