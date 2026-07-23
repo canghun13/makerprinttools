@@ -30,6 +30,12 @@
 - [Resin Bottle Yield Calculator](https://makerprinttools.com/tools/resin/resin-bottle-yield-calculator/): Bottle yield and resin inventory for a production run
 - [Hollow Model Resin Savings Calculator](https://makerprinttools.com/tools/resin/hollow-model-resin-savings-calculator/): Solid versus hollow resin use and avoided material cost
 
+## Guides and reference
+- [Guides](https://makerprinttools.com/guides/): Practical process and cost decisions
+- [Reference](https://makerprinttools.com/reference/): Material selection and handling reference
+- [PLA](https://makerprinttools.com/reference/materials/pla/), [PETG](https://makerprinttools.com/reference/materials/petg/), [ABS](https://makerprinttools.com/reference/materials/abs/), [ASA](https://makerprinttools.com/reference/materials/asa/), [TPU](https://makerprinttools.com/reference/materials/tpu/), [Nylon](https://makerprinttools.com/reference/materials/nylon/), [Polycarbonate](https://makerprinttools.com/reference/materials/polycarbonate/), and [Standard vs Tough Resin](https://makerprinttools.com/reference/materials/standard-tough-resin/): material selection, trade-offs, handling, moisture, and shrinkage context
+- [Layer Height Guide](https://makerprinttools.com/guides/layer-height/), [Volumetric Flow Guide](https://makerprinttools.com/guides/volumetric-flow/), [Wall Thickness Guide](https://makerprinttools.com/guides/wall-thickness/), and [3D Print Cost Guide](https://makerprinttools.com/guides/3d-print-cost/): decision context for workbench calculators
+
 ## Notes
 - Calculator results are estimates and should be verified for safety-critical or commercial work.
 - Calculations run locally in the browser and require no account.

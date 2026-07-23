@@ -414,10 +414,10 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Cloudflare DNS: 설정 완료
 - HTTPS: 정상
 - GA4: 발급 완료 (`G-T6DZFFQJP3`)
-- 초기 개발: **Phase 3 — Core Calculator Expansion 완료 (2026-07-23)**
-- 현재 공개 페이지 수: **26**
+- 초기 개발: **Phase 4 — Guides & Reference Expansion 완료 (2026-07-23)**
+- 현재 공개 페이지 수: **40**
 - 현재 계산기 수: **21**
-- 가이드/레퍼런스 수: **0** (각 계산기 페이지에 공식·해석·예시 포함)
+- 가이드/레퍼런스 수: **12** (Guides/Reference hub 2개 별도)
 - Search Console: 추후 연결 확인 필요
 
 ### 완료된 작업
@@ -447,6 +447,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
   - Failed Print Cost Calculator, Batch Print Cost Calculator, Machine Depreciation Calculator, Profit Margin Calculator
   - Line Width Calculator, Wall Thickness Calculator
   - Resin Bottle Yield Calculator, Hollow Model Resin Savings Calculator
+- Phase 4: 재료 레퍼런스 8개(PLA, PETG, ABS, ASA, TPU, Nylon, Polycarbonate, Standard vs Tough Resin), 실용 가이드 4개(Layer Height, Volumetric Flow, Wall Thickness, 3D Print Cost), Guides/Reference hub 2개 추가
 
 ### 중요한 설계 결정
 
@@ -456,6 +457,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 계산기별 검색 의도와 입력 구조가 겹치지 않도록 8개 대표 툴만 공개
 - calculator 페이지는 `scripts/generate-calculator-pages.mjs`를 Source of Truth로 재생성 가능
 - Phase 3은 기존 도구의 단순 역산·재료명 복제를 제외하고, 인벤토리 계획·다색 폐기물·실패/배치 비용·감가상각·실제 마진·벽/선폭·레진 수율/중공 절감처럼 입력 구조와 의사결정이 다른 도구만 추가
+- Guide는 계산기와 역할을 분리해 선택 기준·트레이드오프·검증 방법을 설명하고, 재료별 고정 온도나 특정 브랜드 수치를 일반값으로 제시하지 않음
 
 ### QA 결과 (2026-07-23)
 
@@ -494,6 +496,12 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 공개 HTTPS QA PASS: Homepage(1440), Tools hub(1280/390), 신규 Filament(1440), Cost(1280), Print Settings(1024), Resin(1024), Geometry(390), 신규 Batch(390)에서 가로 overflow 없음
 - 공개 HTTPS 상호작용 PASS: Batch, Filament Needed, Multi-color Purge Waste, Failed Print Cost, Machine Depreciation, Profit Margin, Line Width, Hollow Resin Savings의 기본값 결과·음수 입력 오류 메시지·결과 초기화를 실제 브라우저에서 확인
 
+### Phase 4 QA 결과 (2026-07-23)
+
+- 자동 QA PASS: 40 HTML / 40 canonical / 40 sitemap URL
+- `scripts/content-qa.mjs`로 Homepage에서 모든 공개 페이지가 내부 링크를 통해 도달 가능한지 확인
+- 신규 Guide/Reference 페이지는 재료 선택, 습기/수축/뒤틀림, 설정·비용 의사결정과 관련 계산기 연결을 포함
+
 ### 알려진 문제
 
 - Contact 이메일 `hello@makerprinttools.com`의 실제 수신 설정은 저장소 밖에서 확인 필요
@@ -501,17 +509,16 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ### 보류된 아이디어
 
-- Material Density Reference 및 첫 guide/reference 콘텐츠
 - Print Farm Break-even, Extrusion Multiplier, Tolerance / Clearance Helper 등 후속 후보
 
 ---
 
 ## 15. 다음 작업
 
-**Phase 4 우선순위**
+**Phase 5 우선순위**
 
 1. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
-2. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
+2. 사용자 피드백 및 검색 성과 기반으로 Material Density / Tolerance / Print Farm 콘텐츠 우선순위 결정
 3. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
 
 ### 최근 커밋
