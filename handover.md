@@ -483,4 +483,5 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 ### 최근 커밋
 
 - 작업 시작 기준: `6fd4ce3` — Add files via upload
-- Phase 1 구현 커밋: commit 후 이 섹션에 기록
+- Phase 1 구현 커밋: `24556cd` — Build MakerPrintTools foundation and first calculators
+- 최신 handover 갱신: 이 문서 갱신 커밋
