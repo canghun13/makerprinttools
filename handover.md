@@ -453,6 +453,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
   - Comparison: PLA vs PETG, PETG vs ABS, ABS vs ASA, FDM vs Resin, 0.4 mm vs 0.6 mm nozzle, fine vs standard layer height
   - Practical: warping, stringing, infill strategy, pre-print filament estimation, selling-price planning, support planning
 - 공통 헤더: 모든 공개 페이지의 기본 메뉴를 Tools / Guides / About / Contact로 정규화. Guides 하위에서는 기존 Tools와 같은 active state를 적용.
+- Guides hub: 전역 디자인 변경 없이 Setup & Tuning / Material & Process Comparisons / Troubleshooting & Cost의 세 작업 흐름으로 재구성. 각 흐름은 featured guide 2개와 compact links로 구분.
 
 ### 중요한 설계 결정
 
@@ -546,6 +547,11 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 57개 공개 페이지의 공통 헤더에 Tools / Guides / About / Contact 순서와 /guides/ 링크를 확인했다.
 - 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots 영향 없음. Content QA로 홈페이지 기준 57개 페이지 도달성 유지.
 - 공개 HTTPS QA PASS: Homepage(1440), Tools(1280), Guides hub(1024), 비교 페이지(390)에서 네 링크 순서·active state·가로 overflow를 확인했다. 390px에서는 Menu를 열어 Guides 링크가 표시되고 overflow 없이 동작함을 확인했다.
+
+### Guides hub information-design QA (진행 중)
+
+- 기존 title, canonical, GA, H1과 모든 Guide / Comparison / Practical 목적지 링크를 유지한 상태로 허브의 시각적 위계만 개선.
+- 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots·homepage 도달성 유지. 공개 HTTPS의 1440 / 1280 / 1024 / 390px 시각 QA 후 완료 기록.
 
 ### 알려진 문제
 
