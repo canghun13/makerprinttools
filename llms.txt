@@ -35,6 +35,8 @@
 - [Reference](https://makerprinttools.com/reference/): Material selection and handling reference
 - [PLA](https://makerprinttools.com/reference/materials/pla/), [PETG](https://makerprinttools.com/reference/materials/petg/), [ABS](https://makerprinttools.com/reference/materials/abs/), [ASA](https://makerprinttools.com/reference/materials/asa/), [TPU](https://makerprinttools.com/reference/materials/tpu/), [Nylon](https://makerprinttools.com/reference/materials/nylon/), [Polycarbonate](https://makerprinttools.com/reference/materials/polycarbonate/), and [Standard vs Tough Resin](https://makerprinttools.com/reference/materials/standard-tough-resin/): material selection, trade-offs, handling, moisture, and shrinkage context
 - [Layer Height Guide](https://makerprinttools.com/guides/layer-height/), [Volumetric Flow Guide](https://makerprinttools.com/guides/volumetric-flow/), [Wall Thickness Guide](https://makerprinttools.com/guides/wall-thickness/), and [3D Print Cost Guide](https://makerprinttools.com/guides/3d-print-cost/): decision context for workbench calculators
+- [Comparisons](https://makerprinttools.com/guides/): practical material, process, nozzle, and layer-height choices, including [PLA vs PETG](https://makerprinttools.com/guides/comparisons/pla-vs-petg/) and [FDM vs Resin](https://makerprinttools.com/guides/comparisons/fdm-vs-resin/)
+- [Practical fixes](https://makerprinttools.com/guides/): warping, stringing, infill, filament planning, pricing, and support-planning workflows connected to the calculators
 
 ## Notes
 - Calculator results are estimates and should be verified for safety-critical or commercial work.

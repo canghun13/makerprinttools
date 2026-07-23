@@ -414,10 +414,10 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Cloudflare DNS: 설정 완료
 - HTTPS: 정상
 - GA4: 발급 완료 (`G-T6DZFFQJP3`)
-- 초기 개발: **Phase 5 — Final Expansion & Full-Site QA 완료 (2026-07-23)**
-- 현재 공개 페이지 수: **45**
+- 초기 개발: **Phase 7 — Comparison & Practical Content Cluster 진행 중 (2026-07-23)**
+- 현재 공개 페이지 수: **57**
 - 현재 계산기 수: **26**
-- 가이드/레퍼런스 수: **12** (Guides/Reference hub 2개 별도)
+- 가이드/레퍼런스 수: **24** (기존 Guide/Reference 12 + Comparison 6 + Practical 6, Guides/Reference hub 2개 별도)
 - Search Console: 추후 연결 확인 필요
 
 ### 완료된 작업
@@ -449,6 +449,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
   - Resin Bottle Yield Calculator, Hollow Model Resin Savings Calculator
 - Phase 4: 재료 레퍼런스 8개(PLA, PETG, ABS, ASA, TPU, Nylon, Polycarbonate, Standard vs Tough Resin), 실용 가이드 4개(Layer Height, Volumetric Flow, Wall Thickness, 3D Print Cost), Guides/Reference hub 2개 추가
 - Phase 5: Print Time, Infill Material, Support Material, Scale-to-Fit Build Volume, Break-even Units Calculator 추가
+- Phase 7: 계산기는 추가하지 않고 비교형 콘텐츠 6개와 문제해결형 콘텐츠 6개를 Guides 허브에 통합
+  - Comparison: PLA vs PETG, PETG vs ABS, ABS vs ASA, FDM vs Resin, 0.4 mm vs 0.6 mm nozzle, fine vs standard layer height
+  - Practical: warping, stringing, infill strategy, pre-print filament estimation, selling-price planning, support planning
 
 ### 중요한 설계 결정
 
@@ -521,6 +524,13 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 실제 콘텐츠 보강: 0개. 판단 근거: 현재 구조에서 문장을 늘리면 템플릿 반복과 사용자 가치 저하 위험이 더 큼.
 - AdSense 관점: 실용 도구·설명·내부 탐색 구조는 1차 수준에 도달. 남은 위험은 콘텐츠 길이가 아니라 Search Console 연결과 실제 유입 데이터 부재.
 
+### Phase 7 QA 결과 (진행 중)
+
+- 정적 QA PASS: 57 HTML / 57 canonical / 57 sitemap URL. 내부 링크, duplicate ID, H1, robots, GA, sitemap 일치 확인 완료.
+- Content QA PASS: 57개 공개 페이지 모두 Homepage → Guides hub 등의 내부 링크로 도달 가능. orphan page 없음.
+- 비교·실용 콘텐츠는 Material Reference의 재료 이해, Calculator의 수치 실행과 역할을 분리했다. 브랜드별 최신 사양·가격·제품 추천은 포함하지 않았다.
+- 공개 HTTPS 반응형·렌더링 QA와 배포 확인 후 최종 완료 상태 및 커밋을 기록한다.
+
 ### 알려진 문제
 
 - Contact 이메일 `hello@makerprinttools.com`의 실제 수신 설정은 저장소 밖에서 확인 필요
@@ -534,15 +544,15 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ## 15. 다음 작업
 
-**Post-launch 우선순위**
+**Phase 7 마무리 우선순위**
 
-1. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
-2. 사용자 피드백 및 검색 성과 기반으로 Material Density / Tolerance / Print Farm 콘텐츠 우선순위 결정
-3. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
+1. Phase 7 공개 HTTPS 시각 QA(1440 / 1280 / 1024 / 390px) 완료 및 배포 확인
+2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
+3. 실제 GSC·사용자 피드백 전까지 신규 콘텐츠 대량 확장 대신 성과 관찰
 
 ### 최근 커밋
 
-- 작업 시작 기준: `6fd4ce3` — Add files via upload
-- Phase 1 구현 커밋: `24556cd` — Build MakerPrintTools foundation and first calculators
-- Phase 2 구현 커밋: `fc2f953` — Expand core calculator clusters and QA
-- 최신 handover 갱신: 이 문서 갱신 커밋
+- `d471118` — Record content depth audit
+- `3638cd1` — Update index.html (사용자 Contact 수정, 보존)
+- `d40ee09` — Complete final workbench expansion
+- 다음 커밋: Phase 7 Comparison & Practical Content Cluster 및 배포 QA 기록
