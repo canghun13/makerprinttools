@@ -548,10 +548,11 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots 영향 없음. Content QA로 홈페이지 기준 57개 페이지 도달성 유지.
 - 공개 HTTPS QA PASS: Homepage(1440), Tools(1280), Guides hub(1024), 비교 페이지(390)에서 네 링크 순서·active state·가로 overflow를 확인했다. 390px에서는 Menu를 열어 Guides 링크가 표시되고 overflow 없이 동작함을 확인했다.
 
-### Guides hub information-design QA (진행 중)
+### Guides hub information-design QA (2026-07-23)
 
 - 기존 title, canonical, GA, H1과 모든 Guide / Comparison / Practical 목적지 링크를 유지한 상태로 허브의 시각적 위계만 개선.
-- 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots·homepage 도달성 유지. 공개 HTTPS의 1440 / 1280 / 1024 / 390px 시각 QA 후 완료 기록.
+- 자동 QA PASS: 57 HTML / canonical / sitemap, 내부 링크·GA·H1·robots·homepage 도달성 유지.
+- 공개 HTTPS QA PASS: Guides hub에서 1440 / 1280 / 1024px는 featured 2열·compact 3열, 390px는 한 열로 자연스럽게 전환. 16개 기존 Guide / Comparison / Practical 목적지 링크, header/footer, H1 유지 및 가로 overflow 없음.
 
 ### 알려진 문제
 
@@ -574,8 +575,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ### 최근 커밋
 
+- `2650796` — Improve Guides hub information hierarchy
 - `19cc053` — Add Guides to shared navigation
 - `6223848` — Add comparison and practical content cluster
 - `d471118` — Record content depth audit
 - `3638cd1` — Update index.html (사용자 Contact 수정, 보존)
-- 다음 커밋: Header navigation 공개 QA 기록
+- 다음 커밋: Guides hub information-design QA 기록
