@@ -491,10 +491,11 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - `site.js` 및 `generate-calculator-pages.mjs` 구문 검사 PASS, `git diff --check` PASS
 - `scripts/calculator-qa.mjs` PASS: 신규 10개 계산기의 기본값 결과와 음수 오류 입력 거부를 모두 확인. NaN / Infinity 결과 없음
 - 로컬 정적 서버는 준비했으나 Codex in-app Browser가 `127.0.0.1`을 보안 정책으로 차단하여 이번 세션의 배포 전 브라우저 렌더링/상호작용 시각 QA는 불가. push 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 확인 필요
+- 공개 HTTPS QA PASS: Homepage(1440), Tools hub(1280/390), 신규 Filament(1440), Cost(1280), Print Settings(1024), Resin(1024), Geometry(390), 신규 Batch(390)에서 가로 overflow 없음
+- 공개 HTTPS 상호작용 PASS: Batch, Filament Needed, Multi-color Purge Waste, Failed Print Cost, Machine Depreciation, Profit Margin, Line Width, Hollow Resin Savings의 기본값 결과·음수 입력 오류 메시지·결과 초기화를 실제 브라우저에서 확인
 
 ### 알려진 문제
 
-- Phase 3 신규 페이지는 push·GitHub Pages 반영 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 샘플 및 8개 이상 계산기 상호작용 확인 필요
 - Contact 이메일 `hello@makerprinttools.com`의 실제 수신 설정은 저장소 밖에서 확인 필요
 - Search Console 연결 상태 미확인
 
@@ -509,10 +510,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 **Phase 4 우선순위**
 
-1. Phase 3 배포 후 공개 HTTPS에서 신규 계산기를 포함한 1440 / 1280 / 1024 / 390px 시각 QA와 8개 이상 계산기 상호작용을 재확인
-2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
-3. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
-4. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
+1. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
+2. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
+3. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
 
 ### 최근 커밋
 
