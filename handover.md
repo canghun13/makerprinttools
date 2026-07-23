@@ -501,6 +501,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 자동 QA PASS: 40 HTML / 40 canonical / 40 sitemap URL
 - `scripts/content-qa.mjs`로 Homepage에서 모든 공개 페이지가 내부 링크를 통해 도달 가능한지 확인
 - 신규 Guide/Reference 페이지는 재료 선택, 습기/수축/뒤틀림, 설정·비용 의사결정과 관련 계산기 연결을 포함
+- 공개 HTTPS 시각 QA PASS: Homepage(1440), Tools hub/Reference hub(1280), PLA(1440), Nylon/Volumetric Flow Guide(1024), Wall Thickness Guide/3D Print Cost Guide/기존 Filament·Batch 계산기(390)에서 가로 overflow 없음
 
 ### 알려진 문제
 
