@@ -414,7 +414,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Cloudflare DNS: 설정 완료
 - HTTPS: 정상
 - GA4: 발급 완료 (`G-T6DZFFQJP3`)
-- 초기 개발: **Phase 7 — Comparison & Practical Content Cluster 진행 중 (2026-07-23)**
+- 초기 개발: **Phase 7 — Comparison & Practical Content Cluster 완료 (2026-07-23)**
 - 현재 공개 페이지 수: **57**
 - 현재 계산기 수: **26**
 - 가이드/레퍼런스 수: **24** (기존 Guide/Reference 12 + Comparison 6 + Practical 6, Guides/Reference hub 2개 별도)
@@ -524,12 +524,21 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 실제 콘텐츠 보강: 0개. 판단 근거: 현재 구조에서 문장을 늘리면 템플릿 반복과 사용자 가치 저하 위험이 더 큼.
 - AdSense 관점: 실용 도구·설명·내부 탐색 구조는 1차 수준에 도달. 남은 위험은 콘텐츠 길이가 아니라 Search Console 연결과 실제 유입 데이터 부재.
 
-### Phase 7 QA 결과 (진행 중)
+### Phase 7 QA 결과 (2026-07-23)
 
 - 정적 QA PASS: 57 HTML / 57 canonical / 57 sitemap URL. 내부 링크, duplicate ID, H1, robots, GA, sitemap 일치 확인 완료.
 - Content QA PASS: 57개 공개 페이지 모두 Homepage → Guides hub 등의 내부 링크로 도달 가능. orphan page 없음.
 - 비교·실용 콘텐츠는 Material Reference의 재료 이해, Calculator의 수치 실행과 역할을 분리했다. 브랜드별 최신 사양·가격·제품 추천은 포함하지 않았다.
-- 공개 HTTPS 반응형·렌더링 QA와 배포 확인 후 최종 완료 상태 및 커밋을 기록한다.
+- 공개 HTTPS 반응형 QA PASS: Homepage(1440), Tools·Guides hub(1280), PLA vs PETG·Reduce Warping(1440), FDM vs Resin·Estimate Filament·PLA Reference(1024), Nozzle comparison·Price guide·Filament Needed·Batch Cost calculator(390)에서 H1 1개, canonical, GA loader와 가로 overflow 없음을 확인했다.
+- 신규 콘텐츠 12개는 모두 Guides hub에서 연결되며, 기존 Material Reference·Calculator로 이어진다. 신규 콘텐츠끼리의 검색 의도 중복, orphan page, 기존 Reference의 단순 복제는 없음.
+
+### 1차 콘텐츠 확장 최종 판정
+
+- 최종 공개 페이지: **57**. Calculator: **26**. 기존 Guide/Reference: **12**. Phase 7 Comparison: **6**. Phase 7 Practical: **6**.
+- 전체 thin-content 상태: 기존 Depth Audit 기준 심각하게 얇음 0개. 신규 페이지도 비교/문제 해결의 독립적인 선택·판단 흐름을 보유.
+- 3D Printing 사이트 1차 완성 판정: **가능**. 지금 당장 추가 콘텐츠 작업: **아니오**.
+- HIGH 위험: 없음. MEDIUM 위험: Search Console 연결·sitemap 제출 및 실제 색인/검색 의도 데이터 부재. LOW 위험: Contact 수신 설정, 실제 사용자의 질문을 반영한 후속 링크·문구 미세 조정.
+- 운영 대기 전 외부 설정: Search Console에서 canonical domain과 sitemap 제출 상태를 확인하고, Contact 이메일 수신을 확인한다. GSC 데이터가 쌓이기 전에는 신규 페이지 대량 확장을 추천하지 않는다.
 
 ### 알려진 문제
 
@@ -544,15 +553,15 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ## 15. 다음 작업
 
-**Phase 7 마무리 우선순위**
+**Post-launch 우선순위**
 
-1. Phase 7 공개 HTTPS 시각 QA(1440 / 1280 / 1024 / 390px) 완료 및 배포 확인
-2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
-3. 실제 GSC·사용자 피드백 전까지 신규 콘텐츠 대량 확장 대신 성과 관찰
+1. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
+2. 실제 GSC·사용자 피드백을 기준으로 CTR, 색인, 내부링크 개선 후보를 선정
+3. 데이터가 충분히 쌓이기 전에는 신규 콘텐츠 대량 확장 대신 성과 관찰
 
 ### 최근 커밋
 
+- `6223848` — Add comparison and practical content cluster
 - `d471118` — Record content depth audit
 - `3638cd1` — Update index.html (사용자 Contact 수정, 보존)
-- `d40ee09` — Complete final workbench expansion
-- 다음 커밋: Phase 7 Comparison & Practical Content Cluster 및 배포 QA 기록
+- 다음 커밋: Phase 7 공개 HTTPS QA와 최종 판정 기록
