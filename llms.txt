@@ -19,6 +19,16 @@
 - [Shrinkage Compensation Calculator](https://makerprinttools.com/tools/geometry/shrinkage-compensation-calculator/): CAD oversize from measured shrinkage
 - [Resin Cost Calculator](https://makerprinttools.com/tools/resin/resin-cost-calculator/): Resin volume, waste, cost, mass, and bottle yield
 - [3D Print Selling Price Calculator](https://makerprinttools.com/tools/business/3d-print-selling-price-calculator/): Price from production cost, fees, and target margin
+- [Filament Needed Calculator](https://makerprinttools.com/tools/filament/filament-needed-calculator/): Batch material planning with process allowance and reserve
+- [Multi-color Purge Waste Estimator](https://makerprinttools.com/tools/filament/multi-color-purge-waste-estimator/): Transition purge, tower material, reuse, and waste share
+- [Failed Print Cost Calculator](https://makerprinttools.com/tools/cost/failed-print-cost-calculator/): Recovery-adjusted cost of failed attempts
+- [Batch Print Cost Calculator](https://makerprinttools.com/tools/cost/batch-print-cost-calculator/): Setup, yield, unit cost, and production time for small runs
+- [Machine Depreciation Calculator](https://makerprinttools.com/tools/cost/machine-depreciation-calculator/): Printer ownership cost per hour and per print
+- [Profit Margin Calculator](https://makerprinttools.com/tools/business/profit-margin-calculator/): Net profit, margin, markup, and break-even price
+- [Line Width Calculator](https://makerprinttools.com/tools/print-settings/line-width-calculator/): Nozzle ratio to line-width target and wall preview
+- [Wall Thickness Calculator](https://makerprinttools.com/tools/print-settings/wall-thickness-calculator/): Target wall thickness translated into perimeter count
+- [Resin Bottle Yield Calculator](https://makerprinttools.com/tools/resin/resin-bottle-yield-calculator/): Bottle yield and resin inventory for a production run
+- [Hollow Model Resin Savings Calculator](https://makerprinttools.com/tools/resin/hollow-model-resin-savings-calculator/): Solid versus hollow resin use and avoided material cost
 
 ## Notes
 - Calculator results are estimates and should be verified for safety-critical or commercial work.

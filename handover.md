@@ -414,9 +414,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Cloudflare DNS: 설정 완료
 - HTTPS: 정상
 - GA4: 발급 완료 (`G-T6DZFFQJP3`)
-- 초기 개발: **Phase 2 — Quality reinforcement & core cluster expansion 완료 (2026-07-23)**
-- 현재 공개 페이지 수: **16**
-- 현재 계산기 수: **11**
+- 초기 개발: **Phase 3 — Core Calculator Expansion 완료 (2026-07-23)**
+- 현재 공개 페이지 수: **26**
+- 현재 계산기 수: **21**
 - 가이드/레퍼런스 수: **0** (각 계산기 페이지에 공식·해석·예시 포함)
 - Search Console: 추후 연결 확인 필요
 
@@ -442,6 +442,11 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Phase 2: Filament Cost, Electricity Cost, 3D Print Selling Price Calculator 추가
 - Phase 2: Tools hub, sitemap, llms.txt를 11개 계산기 기준으로 동기화
 - Design QA: Homepage, Tools hub, 대표 계산기 5개를 공개 HTTPS 렌더링 기준으로 점검하고 시각·사용성만 보강
+- Phase 3: 중복 없는 핵심 계산기 10개 추가 및 Tools hub, sitemap, llms.txt를 21개 계산기 기준으로 동기화
+  - Filament Needed Calculator, Multi-color Purge Waste Estimator
+  - Failed Print Cost Calculator, Batch Print Cost Calculator, Machine Depreciation Calculator, Profit Margin Calculator
+  - Line Width Calculator, Wall Thickness Calculator
+  - Resin Bottle Yield Calculator, Hollow Model Resin Savings Calculator
 
 ### 중요한 설계 결정
 
@@ -450,6 +455,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 통화 기호를 강제하지 않고 사용자가 동일 통화 단위로 가격을 입력하는 중립 설계
 - 계산기별 검색 의도와 입력 구조가 겹치지 않도록 8개 대표 툴만 공개
 - calculator 페이지는 `scripts/generate-calculator-pages.mjs`를 Source of Truth로 재생성 가능
+- Phase 3은 기존 도구의 단순 역산·재료명 복제를 제외하고, 인벤토리 계획·다색 폐기물·실패/배치 비용·감가상각·실제 마진·벽/선폭·레진 수율/중공 절감처럼 입력 구조와 의사결정이 다른 도구만 추가
 
 ### QA 결과 (2026-07-23)
 
@@ -478,24 +484,32 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 보강: 입력 패널의 노란 작업 보드 표식, 결과 패널의 연녹색 판독 영역, 48px 입력·버튼 터치 높이, Tools hub 카테고리 색상 레일
 - 기능, SEO, 계산 로직, 공개 페이지 수와 계산기 수는 변경하지 않음
 
+### Phase 3 QA 결과 (2026-07-23)
+
+- 자동 QA PASS: 26 HTML / 26 canonical / 26 sitemap URL
+- broken internal links, duplicate ID, H1 수, accidental noindex, GA 누락·중복, sitemap 불일치 없음
+- `site.js` 및 `generate-calculator-pages.mjs` 구문 검사 PASS, `git diff --check` PASS
+- `scripts/calculator-qa.mjs` PASS: 신규 10개 계산기의 기본값 결과와 음수 오류 입력 거부를 모두 확인. NaN / Infinity 결과 없음
+- 로컬 정적 서버는 준비했으나 Codex in-app Browser가 `127.0.0.1`을 보안 정책으로 차단하여 이번 세션의 배포 전 브라우저 렌더링/상호작용 시각 QA는 불가. push 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 확인 필요
+
 ### 알려진 문제
 
-- 신규 Phase 2 페이지는 push·GitHub Pages 반영 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 샘플 확인 필요
+- Phase 3 신규 페이지는 push·GitHub Pages 반영 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 샘플 및 8개 이상 계산기 상호작용 확인 필요
 - Contact 이메일 `hello@makerprinttools.com`의 실제 수신 설정은 저장소 밖에서 확인 필요
 - Search Console 연결 상태 미확인
 
 ### 보류된 아이디어
 
 - Material Density Reference 및 첫 guide/reference 콘텐츠
-- 실패 비용, 판매 가격, tolerance/clearance 등 Phase 2 계산기 후보
+- Print Farm Break-even, Extrusion Multiplier, Tolerance / Clearance Helper 등 후속 후보
 
 ---
 
 ## 15. 다음 작업
 
-**Phase 3 우선순위**
+**Phase 4 우선순위**
 
-1. 이번 시각 보강 배포 후 공개 HTTPS에서 동일한 1440 / 1280 / 1024 / 390px 시각 QA와 5개 이상 계산기 상호작용을 재확인
+1. Phase 3 배포 후 공개 HTTPS에서 신규 계산기를 포함한 1440 / 1280 / 1024 / 390px 시각 QA와 8개 이상 계산기 상호작용을 재확인
 2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
 3. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
 4. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
