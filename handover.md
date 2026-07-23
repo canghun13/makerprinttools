@@ -441,6 +441,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Phase 2: 공개 HTTPS 기준 homepage, Tools hub, cost/resin calculator, About 반응형·overflow 점검
 - Phase 2: Filament Cost, Electricity Cost, 3D Print Selling Price Calculator 추가
 - Phase 2: Tools hub, sitemap, llms.txt를 11개 계산기 기준으로 동기화
+- Design QA: Homepage, Tools hub, 대표 계산기 5개를 공개 HTTPS 렌더링 기준으로 점검하고 시각·사용성만 보강
 
 ### 중요한 설계 결정
 
@@ -469,6 +470,14 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 공개 Cost 페이지: GA ID 문자열 2개(loader/config), H1 1개, canonical, 기본 결과 `9.58` 확인
 - malformed HTML, duplicate id, internal link, accidental noindex, sitemap mismatch 없음
 
+### Design QA 결과 (2026-07-23)
+
+- 공개 HTTPS 렌더링 점검: Homepage, Tools hub, 3D Print Cost, Filament Length ↔ Weight, Volumetric Flow, Resin Cost, Selling Price, Model Scale 화면을 1440 / 1280 / 1024 / 390px 조합으로 확인
+- 모든 점검 화면에서 가로 overflow 없음. 390px에서 메뉴, Tools hub, 계산기 입력·결과가 단일 열로 전환되고, 대표 계산기 5개에서 입력·결과 영역 폭이 뷰포트 안에 유지됨
+- 유지: paper/grid, workbench 번호 체계, 기존 typography 및 여백 구조는 MakerPrintTools 정체성이 충분해 전면 재설계하지 않음
+- 보강: 입력 패널의 노란 작업 보드 표식, 결과 패널의 연녹색 판독 영역, 48px 입력·버튼 터치 높이, Tools hub 카테고리 색상 레일
+- 기능, SEO, 계산 로직, 공개 페이지 수와 계산기 수는 변경하지 않음
+
 ### 알려진 문제
 
 - 신규 Phase 2 페이지는 push·GitHub Pages 반영 후 공개 HTTPS에서 1440 / 1280 / 1024 / 390px 시각 샘플 확인 필요
@@ -486,7 +495,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 **Phase 3 우선순위**
 
-1. GitHub Pages 배포 직후 신규 Phase 2 페이지를 포함해 1440 / 1280 / 1024 / 390px 시각 QA 및 5개 이상 계산기 상호작용 재검증
+1. 이번 시각 보강 배포 후 공개 HTTPS에서 동일한 1440 / 1280 / 1024 / 390px 시각 QA와 5개 이상 계산기 상호작용을 재확인
 2. Search Console 연결 및 sitemap 제출 상태 확인(검증 파일/태그는 제공된 값만 사용)
 3. 실제 검색 의도 조사 후 Material Density Reference 또는 고품질 guide 1~2개 작성
 4. 사용자 피드백 기반으로 다음 계산기 우선순위 결정
