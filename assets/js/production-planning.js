@@ -6,7 +6,10 @@
   const details = $('#result-details');
   const error = $('#form-error');
   const fmt = (value, digits = 2) => Number(value).toLocaleString(undefined, { maximumFractionDigits: digits, minimumFractionDigits: 0 });
-  const value = name => Number(form.elements[name]?.value);
+  const value = name => {
+    const raw = form.elements[name]?.value;
+    return raw == null || raw.trim() === '' ? Number.NaN : Number(raw);
+  };
   const positive = number => Number.isFinite(number) && number > 0;
   const percentage = number => Number.isFinite(number) && number >= 0 && number <= 100;
   const clear = message => { result.textContent = '—'; details.innerHTML = ''; error.textContent = message; };
