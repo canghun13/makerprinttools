@@ -588,3 +588,19 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ## 2026-07-30
 - 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://twelve.tools/, https://findly.tools/에 등록 (내가 직접함)
+
+## 2026-08-01 — Print Farm Production Planning
+
+- 시작 commit: `07ee7bd`.
+- 신규 클러스터: **Print Farm Production Planning**. 기존 Calculator의 비용·시간·감가상각·실패 입력을 farm-level capacity, queue, utilization, downtime, throughput, deadline 판단으로 연결한다.
+- 신규 페이지 9개: `/tools/production/` 허브, Capacity / Required Printer Count / Queue Completion / Utilization / Downtime Impact / Batch Throughput 계산기 6개, `How to Schedule a Small 3D Print Farm` Guide, `Print Farm Capacity, Availability, Utilization and Throughput Reference`.
+- 정확 중복: 없음. 대체 계산기 사용 없음.
+- 공식 QA PASS: Capacity 448 / 403.2 / 322.56 printer-hours; Required Printers 180 required hours, 57.6 per printer, 4 printers; Queue 68.85 hours/day, 3.486 operating days (240 ÷ 68.85, 반올림); Utilization 720 gross hours, 66.667%; Downtime 6000 / 900 / 5100 hours, 180 cycles, 360 units; Throughput 57.6 effective hours/day, 7.2 cycles, 28.8 attempted, 27.36 good units/day.
+- 입력 QA PASS: empty, zero, negative, NaN, Infinity, over-100% ratio, decimal values, large values, and zero-denominator cases clear the previous result and show an error.
+- 기존 계산기 회귀 PASS: Print Cost, Filament, Print Settings, Geometry, Resin, Business/Pricing에서 기본값·입력 변경·오류 입력·reload reset·console error 없음 확인.
+- 정적 QA PASS: 66 HTML / 66 canonical / 66 sitemap URL; broken link, orphan, duplicate ID, H1, robots, GA4, and sitemap checks pass. `production-planning.js` and all generator scripts parse cleanly.
+- 통합: Homepage, Tools hub (Production Planning category), Guides hub, Reference hub, Batch Cost / Break-even / Depreciation / Print Time / Failed Print Cost related links, sitemap.xml, llms.txt 갱신.
+- 사용자 관리 배지: Homepage footer 아래 KittyLaunch 및 디렉토리 배지·링크 마크업을 변경하지 않음.
+- 브라우저 QA: in-app Browser는 local `127.0.0.1` 정적 서버를 security error page로 차단했다. 배포 후 public HTTPS에서 신규 9페이지 × 5 viewport 및 핵심 페이지를 재검사한다.
+- 공개 페이지 수: **66**. 계산기 수: **32**. Guide/Reference/Comparison/Practical 콘텐츠: **26** (신규 Guide/Reference 포함, hubs 별도).
+- 남은 위험: HIGH 없음. MEDIUM: Search Console 제출/색인과 Contact 수신 설정은 저장소 외 확인 필요. LOW: 실제 farm 운영 데이터로 availability, utilization, yield 가정을 재보정.

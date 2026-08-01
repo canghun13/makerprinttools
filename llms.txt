@@ -42,3 +42,14 @@
 - Calculator results are estimates and should be verified for safety-critical or commercial work.
 - Calculations run locally in the browser and require no account.
 - Canonical domain: https://makerprinttools.com
+
+## Print Farm Production Planning
+- [Print Farm Planning Tools](https://makerprinttools.com/tools/production/): Capacity, printer count, queue, utilization, downtime, and throughput planning
+- [3D Print Farm Capacity Calculator](https://makerprinttools.com/tools/production/print-farm-capacity-calculator/): Calculate theoretical, availability-adjusted, and productive printer-hours for a 3D print farm schedule.
+- [Required Printer Count Calculator](https://makerprinttools.com/tools/production/required-printer-count-calculator/): Estimate how many compatible 3D printers are required to deliver a batch by a deadline after yield and capacity losses.
+- [Print Queue Completion Time Calculator](https://makerprinttools.com/tools/production/print-queue-completion-time-calculator/): Estimate operating days to clear a 3D print queue using compatible printer count, availability, utilization, and turnaround allowance.
+- [Printer Utilization Calculator](https://makerprinttools.com/tools/production/printer-utilization-calculator/): Calculate gross capacity, maintenance-adjusted capacity, productive utilization, idle time, and unaccounted printer-hours.
+- [Print Farm Downtime Impact Calculator](https://makerprinttools.com/tools/production/print-farm-downtime-impact-calculator/): Estimate the printer-hours, print cycles, and units a 3D print farm loses to expected downtime.
+- [Batch Throughput Calculator](https://makerprinttools.com/tools/production/batch-throughput-calculator/): Estimate daily, weekly, and monthly 3D print farm throughput from cycle time, capacity losses, and expected yield.
+- [How to Schedule a Small 3D Print Farm](https://makerprinttools.com/guides/small-print-farm-scheduling/): Scheduling workflow, buffers, and maintenance planning
+- [Print Farm Capacity Reference](https://makerprinttools.com/reference/print-farm-capacity-reference/): Capacity and throughput definitions and formulas
