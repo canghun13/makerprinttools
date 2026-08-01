@@ -604,3 +604,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 브라우저 QA: in-app Browser는 local `127.0.0.1` 정적 서버를 security error page로 차단했다. 배포 후 public HTTPS에서 신규 9페이지 × 5 viewport 및 핵심 페이지를 재검사한다.
 - 공개 페이지 수: **66**. 계산기 수: **32**. Guide/Reference/Comparison/Practical 콘텐츠: **26** (신규 Guide/Reference 포함, hubs 별도).
 - 남은 위험: HIGH 없음. MEDIUM: Search Console 제출/색인과 Contact 수신 설정은 저장소 외 확인 필요. LOW: 실제 farm 운영 데이터로 availability, utilization, yield 가정을 재보정.
+
+## 2026-08-01 Production planner validation deployment
+
+- Blank productive-hours validation fix (`fb8eb0f`) deployed and publicly reverified: PASS. Final public pages: 66; calculators: 32; user-managed footer badges unchanged.
