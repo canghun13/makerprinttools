@@ -3,7 +3,10 @@
   if (!index) return;
 
   const links = [...index.querySelectorAll('a[data-section]')];
-  const setActive = id => links.forEach(link => link.toggleAttribute('aria-current', link.dataset.section === id));
+  const setActive = id => links.forEach(link => {
+    if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
   const syncHash = () => {
     const id = location.hash.slice(1);
     if (links.some(link => link.dataset.section === id)) setActive(id);
