@@ -608,3 +608,12 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 ## 2026-08-01 Production planner validation deployment
 
 - Blank productive-hours validation fix (`fb8eb0f`) deployed and publicly reverified: PASS. Final public pages: 66; calculators: 32; user-managed footer badges unchanged.
+
+## 2026-08-01 Tools hub Workbench index deployment
+
+- Implementation commit `a2f5941`: Tools hub Workbench index improvement deployed.
+- Categories 01–06 and scroll/hash active state: PASS.
+- Responsive layout: three columns at 800px and below; two columns at 520px and below.
+- Public Tools QA at 1440 / 1280 / 1024 / 768 / 390: PASS; no horizontal overflow, header overlap, or console errors.
+- Homepage, Guides hub, Reference hub, 3D Print Cost Calculator, and Printer Utilization Calculator representative regression checks: PASS.
+- User-managed footer badges unchanged.
