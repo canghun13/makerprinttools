@@ -617,3 +617,7 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Public Tools QA at 1440 / 1280 / 1024 / 768 / 390: PASS; no horizontal overflow, header overlap, or console errors.
 - Homepage, Guides hub, Reference hub, 3D Print Cost Calculator, and Printer Utilization Calculator representative regression checks: PASS.
 - User-managed footer badges unchanged.
+
+
+## 2026-08-06
+- 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://launchbuff.com/에 등록 (내가 직접함)
