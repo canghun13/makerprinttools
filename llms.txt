@@ -53,3 +53,13 @@
 - [Batch Throughput Calculator](https://makerprinttools.com/tools/production/batch-throughput-calculator/): Estimate daily, weekly, and monthly 3D print farm throughput from cycle time, capacity losses, and expected yield.
 - [How to Schedule a Small 3D Print Farm](https://makerprinttools.com/guides/small-print-farm-scheduling/): Scheduling workflow, buffers, and maintenance planning
 - [Print Farm Capacity Reference](https://makerprinttools.com/reference/print-farm-capacity-reference/): Capacity and throughput definitions and formulas
+
+## 3D Printer Motion Mechanics
+- [Motion Mechanics Tools](https://makerprinttools.com/tools/motion/): Belt and lead-screw calibration, axis correction, timing-belt sizing, and pulse-rate planning
+- [Belt Steps per mm Calculator](https://makerprinttools.com/tools/motion/belt-steps-per-mm-calculator/): Calculate belt-axis steps per mm and Klipper rotation distance
+- [Lead Screw Steps per mm Calculator](https://makerprinttools.com/tools/motion/lead-screw-steps-per-mm-calculator/): Calculate lead-screw axis steps per mm from screw lead and motor settings
+- [Axis Steps Calibration Calculator](https://makerprinttools.com/tools/motion/axis-steps-calibration-calculator/): Correct steps per mm or rotation distance from measured travel
+- [Timing Belt Length Calculator](https://makerprinttools.com/tools/motion/timing-belt-length-calculator/): Estimate open-belt pitch length, tooth count, and adjusted center distance
+- [Step Pulse Rate Calculator](https://makerprinttools.com/tools/motion/step-pulse-rate-calculator/): Calculate pulse frequency, motor RPM, and pulse interval at a target speed
+- [3D Printer Motion Settings Guide](https://makerprinttools.com/guides/3d-printer-motion-settings/): A measurement-first workflow for motion settings
+- [Stepper Motion Reference](https://makerprinttools.com/reference/stepper-motion-reference/): Formula definitions, conversions, and cautions for stepper-driven motion
