@@ -639,3 +639,26 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 사용자 관리 영역: Homepage `index.html`은 변경하지 않았다. KittyLaunch, LaunchBuff, BoostDomainRating 및 기존 디렉토리 배지·링크가 공개 페이지에서 그대로 존재함을 확인했다.
 - 위험: **HIGH 없음**. **MEDIUM**: Search Console 제출·색인 상태와 실제 기계에서의 travel/pulse-rate 검증은 저장소 밖 확인이 필요하다. **LOW**: open-belt 식은 표준 pitch-line 근사이며 실제 tension allowance·pulley geometry·구매 가능한 whole-tooth belt는 제작 전에 확인해야 한다.
 - 지금 당장 추가 작업 필요 여부: **아니오**. 실제 검색·사용 데이터 또는 하드웨어 재현 문제가 생기기 전에는 이 클러스터 추가 확장을 권장하지 않는다.
+
+## 2026-08-08 — Second search cluster research: NO-GO
+
+- 시작 commit: `fcff5c5`. 이번 사이클 1차 신규 cluster는 이미 배포된 **3D Printer Motion Mechanics**이며, 두 번째 cluster 후보만 재조사했다.
+- 최신 inventory: 공개 HTML **74**, calculator **37**, Workbench category 01–07. 기존 intent는 print cost/business, filament/material use, print settings, geometry/scaling, resin, print-farm production planning, motion mechanics 및 관련 Guide/Reference를 포함한다.
+- 월간 검색량 숫자는 추정하지 않았다. 실제 SERP의 query 변형, calculator/tool 결과, 공식 기능, maker/forum 반복 질문을 근거로 Demand / Tool intent / Competition / Distinctness / Cluster depth / Calculation quality / Maintenance HARD GATE를 비교했다.
+
+### 후보 판정
+
+- **Bed mesh / first-layer measurement — REJECT.** Bed variance, mesh interpretation, screw turns, probe repeatability, Z-offset 질문은 반복된다. 그러나 Klipper가 bed leveling, bed mesh, probe calibration, screw adjustment와 mesh analysis를 공식 제공하고, OctoPrint Bed Visualizer·Meshvisualizer·전용 Bed Mesh Analyzer가 paste/visualization/statistics/screw correction을 이미 제공한다. Demand와 Tool intent는 통과하지만 Competition gap gate를 실패했다. 근거: https://www.klipper3d.org/Bed_Level.html, https://www.klipper3d.org/Bed_Mesh.html, https://plugins.octoprint.org/plugins/bedlevelvisualizer/, https://www.gamebob.dev/en/utilities/categories/3d-printing/bed-mesh-analyzer/
+- **3D printed fit / clearance / fasteners — REJECT.** Press fit, sliding clearance, undersized holes, heat-set insert pilot holes의 반복 수요는 확인했다. 동시에 tolerance/fit/hole calculator가 다수 존재하며, 실제 보정은 printer, orientation, material, temperature, flow와 test coupon에 종속된다. 기존 Shrinkage Compensation/Geometry와도 일부 겹쳐 Competition, Distinctness, Calculation quality gates를 실패했다. 근거: https://grandpacad.com/en/tools/tolerance-fit-calculator, https://www.rmproductionsllc.com/tools/tolerance-calculator/, https://tools.creative3dp.com/tools/hole-tolerance-calculator/
+- **Extrusion and filament-profile calibration — REJECT.** Flow ratio, pressure advance, retraction, E-steps 질문은 반복되지만 OrcaSlicer가 calibration workflow를 직접 제공하고 무료 calculators도 포화 상태다. 기존 Volumetric Flow, Line Width, Wall Thickness, Motion settings와 의미상 겹쳐 Competition과 Distinctness gates를 실패했다. 근거: https://github.com/SoftFever/OrcaSlicer/wiki/Calibration, https://printpal.io/tools/flow-rate-calculator, https://geoff.greer.fm/3d/estep/
+- **Thermal / PSU / heater / wiring planning — REJECT.** PSU sizing, bed heat-up, current, fuse, wire gauge 질문은 반복되고 여러 도구로 나눌 수 있다. 그러나 enclosure loss, heater coupling, duty cycle, conductor insulation/bundling, connector rating, mains/DC protection을 단순 입력으로 안전하게 결정할 수 없고 동일 PSU/heated-bed calculators도 존재한다. Safety와 Calculation quality gate를 실패했다.
+- **Filament dry-box environment — HOLD.** Storage humidity와 desiccant 질문은 강하지만 air-only dew-point/absolute-humidity 계산은 filament 내부 수분, box leakage, opening frequency, desiccant isotherm과 mass-transfer rate를 설명하지 못한다. Drying time을 정확한 결과처럼 제시할 수 없어 Calculation quality gate를 실패했다. Prusa도 dry box는 moist filament를 건조하지 않고 흡수를 늦추는 장치라고 구분한다. 근거: https://help.prusa3d.com/article/prusa-uss-drybox_1014382, https://help.prusa3d.com/article/first-setup-and-filament-loading-uss-drybox_1074142
+- **Object photogrammetry / 3D scanning planning — HOLD.** GSD, field of view, turntable photo count 질문은 존재하지만 강한 공식 GSD/FOV tools가 있고 object capture의 overlap·photo count는 표면 texture, reflections, lens, focus와 software에 크게 좌우된다. 3D printing 핵심 intent와의 거리가 있고 자연스러운 독립 tools 4개를 확실히 구성하지 못해 Competition, Distinctness, Cluster depth gates를 통과하지 못했다. 근거: https://support.pix4d.com/hc/en-us/articles/202560249, https://www.photomodeler.com/pm-support/field-of-view-calculator/
+- **3D printed gears / maker gearing — REJECT.** Spur dimensions, center distance, ratio, compound trains, rack travel은 결정론적으로 계산 가능하고 maker 질문도 반복된다. 그러나 전문 calculator hubs와 무료 STL/DXF gear generators가 이미 핵심 및 long-tail을 강하게 점유한다. Competition gap gate를 실패했다. 근거: https://evolventdesign.com/pages/calculators, https://geardxf.com/, https://meta-matic.com/en/calc/gear-center-distance/
+
+### 종료 판정
+
+- **SECOND CLUSTER: NO-GO — 이번 사이클 확장 종료.** 수요가 있는 후보는 있었지만 HARD GATE A–G를 모두 통과한 후보는 없었다. 특히 경쟁 빈틈, 기존 영역과의 비중복, 사용자가 제공할 수 있는 입력만으로의 결정론적 정확성 중 하나 이상이 각 후보에서 실패했다.
+- 제품 파일, HTML/CSS/JS, sitemap, llms.txt, Tools index, Homepage 및 사용자 관리 footer/directory badge 영역은 변경하지 않았다. 공개 페이지 **74**, calculator **37**을 유지한다.
+- 이번 판단은 영구 기각이 아니다. Search Console 또는 실제 사용자 문의에서 하나의 문제군에 반복 query가 쌓이고 현재 도구가 해결하지 못하는 명확한 gap이 확인될 때만 HOLD 후보를 재검토한다.
+- 구현 commit: 없음. 최종 commit: 이 handover-only NO-GO 기록 commit (`Record second cluster no-go research`).
