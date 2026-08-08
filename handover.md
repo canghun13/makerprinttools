@@ -621,3 +621,21 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 
 ## 2026-08-06
 - 메인 페이지 푸터 아래의 디렉토리 뱃지 영역은 사용자가 직접 관리하는 영역이므로 수정·삭제·리팩터링하지 않는다.- https://launchbuff.com/ https://boostdomainrating.com/ 에 등록 (내가 직접함)
+
+## 2026-08-08 — 3D Printer Motion Mechanics deployment
+
+- 시작 commit: `9ad2eb9`. 구현 commit: `93fb42f` (`Add 3D printer motion mechanics tools`). 마감 commit: 이 handover 기록 commit (`Record motion mechanics deployment QA`).
+- 선정 클러스터: **3D Printer Motion Mechanics**. 기존 7개 Workbench 범주와 URL·title·H1·본문 검색 의도를 대조해 `steps/mm`, `lead screw`, `microstep`, `rotation_distance`, `timing belt`, `pulse rate` 중복이 없음을 확인했다.
+- 후보 조사: UPS runtime은 배터리 모델·노화·방전곡선 의존성이 크고 일반 UPS 도구 경쟁이 강해 제외했다. Dry-box/desiccant는 누설·주변 습도·포화 상태로 정확한 건조 시간 계산이 어려워 제외했다. Enclosure ventilation은 안전 영향과 HVAC 변수 때문에 단순 도구화 위험이 높아 제외했다. Resin wash/vat 후보는 제품·재료별 편차가 크고 독립 도구 검색 의도가 약해 제외했다.
+- 선택 근거: steps/mm 핵심 검색은 경쟁이 있지만 belt, lead screw, measured correction, open timing-belt sizing, pulse-rate/RPM 의도가 분산돼 있으며, 모두 사용자가 입력할 수 있는 기계값으로 결정론적 계산이 가능하다. 공식 근거는 Marlin M92/configuration, Klipper rotation_distance, Gates Timing Belt Theory, TI microstepping documentation을 사용했다.
+- 신규 공개 페이지 8개: `/tools/motion/` hub, Belt Steps per mm, Lead Screw Steps per mm, Axis Steps Calibration, Timing Belt Length, Step Pulse Rate 계산기 5개, `/guides/3d-printer-motion-settings/`, `/reference/stepper-motion-reference/`.
+- 공식: belt steps/mm = `(360 / angle) × microsteps × ratio / (pitch × teeth)`; lead-screw lead = `pitch × starts`; lead-screw steps/mm = `(360 / angle) × microsteps × ratio / lead`; corrected steps/mm = `current × commanded / measured`; corrected rotation distance = `current × measured / commanded`; open-belt length = `2C + π(D1 + D2)/2 + (D2 - D1)²/(4C)`; pulse rate = `steps/mm × speed`; RPM = `pulse rate × 60 / (full steps/rev × microsteps)`.
+- 대표값 QA PASS: belt 80 steps/mm·rotation_distance 40 mm; lead screw 400 steps/mm·lead 8 mm; measured correction 80.402 steps/mm·39.8 mm rotation distance; timing belt 440 mm·220 teeth·200 mm adjusted center; pulse rate 16,000 steps/s·300 RPM·62.5 µs.
+- 입력 QA PASS: 각 필드별 blank, invalid text, zero, negative, `NaN`, `Infinity`, 범위 초과, 큰 유한값. 오류 시 이전 결과와 detail을 지우며 `NaN`/`Infinity`를 출력하지 않는다. 입력 변경·Calculate·Reset wiring도 PASS.
+- 정적 QA PASS: 74 HTML / 74 canonical / 74 sitemap URL, 홈페이지 내부 링크 도달성 74/74, broken local link·duplicate ID·H1·robots·GA4·내부 `.html` URL·sitemap 불일치 없음. OneDrive 비 ASCII 경로와 유효한 외부 Marlin `.html` URL을 오탐하는 기존 minified QA 대신 동일 검사를 경로 안전 runner로 재확인했다.
+- 로컬 브라우저 QA PASS: 신규 8페이지 × 1440 / 1280 / 1024 / 768 / 390 = 40개 조합, representative existing pages 14개 조합, 신규 5개 계산기 상호작용, 기존 Print Cost / Model Scale / Printer Utilization 상호작용. 가로 overflow·control clipping·header/H1 overlap·console error 없음.
+- 공개 배포 QA PASS: 신규 8 URL과 `site.css`, `site.js`, `motion-mechanics.js` 모두 HTTP 200. title/H1/canonical, sitemap 8 URL, 신규 40개 반응형 조합, 신규 계산기 5개 default/change/blank/reset, 기존 대표 페이지와 계산기 회귀, Tools `#motion` 직접 접근 및 07 active state 모두 PASS. Console error 0건.
+- 최종 공개 페이지: **74**. 최종 계산기: **37**. Tools Workbench index는 **01–07**.
+- 사용자 관리 영역: Homepage `index.html`은 변경하지 않았다. KittyLaunch, LaunchBuff, BoostDomainRating 및 기존 디렉토리 배지·링크가 공개 페이지에서 그대로 존재함을 확인했다.
+- 위험: **HIGH 없음**. **MEDIUM**: Search Console 제출·색인 상태와 실제 기계에서의 travel/pulse-rate 검증은 저장소 밖 확인이 필요하다. **LOW**: open-belt 식은 표준 pitch-line 근사이며 실제 tension allowance·pulley geometry·구매 가능한 whole-tooth belt는 제작 전에 확인해야 한다.
+- 지금 당장 추가 작업 필요 여부: **아니오**. 실제 검색·사용 데이터 또는 하드웨어 재현 문제가 생기기 전에는 이 클러스터 추가 확장을 권장하지 않는다.
