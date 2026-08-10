@@ -682,3 +682,12 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 구현 commit: `27bdb1298f8a82995643318a7e6fba3e5b82349e` (`Fix selling price validation boundaries`).
 - 최종 공개 페이지: **74**. 최종 calculator: **37**. 신규 페이지/cluster 없음.
 - 배포 상태: handover 기록 시점에는 push 및 변경 URL Production 재검증 전. 원격 반영 후 별도 closeout 기록을 추가한다.
+
+## 2026-08-10 — Selling Price validation deployment closeout
+
+- 구현 commit `27bdb1298f8a82995643318a7e6fba3e5b82349e`와 감사 기록 commit `dfda746db28e54d667c70587fa3d83f49252f215`를 `origin/main`에 push하고 local/remote HEAD 일치를 확인했다.
+- 공개 `assets/js/site.js` HTTP 200 및 결합 비율/blank validation 코드 반영을 확인했다.
+- Production Calculator QA PASS: default `22.22`; fee 60% + margin 40%와 blank fee는 결과 `—`, detail 초기화, 명확한 오류 메시지. `NaN`/`Infinity`/`∞`/음수 판매가격 없음.
+- Production page QA PASS: title, H1 1개, canonical, GA4 loader/config, CSS, mobile menu, horizontal overflow, console error 0건. 1440 / 1280 / 1024 / 768 / 390에서 form/result clipping 없음; 390px 새 URL 진입에서 sticky header/H1 overlap 없음.
+- 최종 공개 페이지 **74**, calculator **37**, 신규 페이지/cluster 없음. Homepage와 사용자 관리 directory badge 영역은 변경하지 않았다.
+- 최종 commit: 이 Production closeout handover commit.
