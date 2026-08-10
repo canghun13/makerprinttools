@@ -662,3 +662,23 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - 제품 파일, HTML/CSS/JS, sitemap, llms.txt, Tools index, Homepage 및 사용자 관리 footer/directory badge 영역은 변경하지 않았다. 공개 페이지 **74**, calculator **37**을 유지한다.
 - 이번 판단은 영구 기각이 아니다. Search Console 또는 실제 사용자 문의에서 하나의 문제군에 반복 query가 쌓이고 현재 도구가 해결하지 못하는 명확한 gap이 확인될 때만 HOLD 후보를 재검토한다.
 - 구현 commit: 없음. 최종 commit: 이 handover-only NO-GO 기록 commit (`Record second cluster no-go research`).
+
+## 2026-08-10 — Highest-impact audit: Selling Price validation
+
+- 시작 commit: `838cb837cdc8a1b6c681cca02b8262b9062892fd`. 시작 시 local `main`, `origin/main`, remote HEAD가 일치했고 working tree는 clean이었다.
+- 최신 inventory 재계산: 공개 HTML **74**, calculator **37**, Workbench category **01–07**. Guides, Reference, Production Planning, Motion Mechanics, sitemap, robots, llms, canonical, metadata, GA4, 내부 링크, 공통 JS/CSS를 재감사했다. Repository에 GSC/GA4 export 또는 query/landing-page 데이터는 없었으며 Search Console 연결 상태도 확인되지 않았다.
+- 주요 후보 판정:
+  - **DO NOW — 3D Print Selling Price Calculator validation.** Production에서 fee 60% + margin 40%가 `∞`와 `NaN`, 합계 110%가 음수 가격을 출력했고 blank fee가 이전 성공 결과를 유지했다. 실제 사용자 계산 신뢰를 훼손하며 최소 수정으로 재현·검증 가능했다.
+  - **HOLD — 기존 검색 노출 페이지 보강.** 실제 GSC/GA4 신호가 없어 rewrite 근거가 부족하다.
+  - **HOLD — structured data 추가.** 현재 74페이지의 title/H1/canonical/indexability가 정상이고 calculator-specific rich-result 효과 근거가 약하다.
+  - **REJECT — 신규 cluster.** 기존 페이지의 명확한 correctness 버그보다 기대효과가 낮고, 2026-08-08 second-cluster NO-GO를 뒤집을 새 증거가 없다.
+- 선택 작업: Selling Price Calculator에서 네 필드의 blank를 거부하고, marketplace fee + target margin 합계가 100% 이상이면 계산을 중단해 이전 결과를 `—`로 지우도록 수정했다.
+- 변경 파일: `assets/js/site.js`, `scripts/calculator-qa.mjs`, `scripts/qa.mjs`. Homepage와 사용자 관리 KittyLaunch / LaunchBuff / BoostDomainRating / 기타 directory badge 영역은 변경하지 않았다.
+- QA infrastructure: 유효한 외부 Marlin `M092.html` URL을 malformed internal link로 오탐하던 `scripts/qa.mjs`를 내부 `.html` URL만 검사하도록 수정했다. 제품 링크를 테스트에 맞춰 변경하지 않았다.
+- 정적 QA PASS: 74 HTML / 74 canonical / 74 sitemap URL, homepage 도달성 74/74, broken internal link·orphan·duplicate ID·H1·robots·GA4·sitemap mismatch 없음. 공통/Production/Motion JS syntax와 각 calculator QA PASS.
+- Calculator QA PASS: default `22.22`, changed inputs `35.71`, zero rates `14`, negative·blank·combined 100%·100% 초과 거부, combined 99.99%와 큰 유한값은 finite 결과, reload reset `22.22`. 오류 시 이전 결과와 detail을 지우며 `NaN`/`Infinity`/`∞`를 출력하지 않는다.
+- 로컬 브라우저 QA PASS: 변경 페이지 1440 / 1280 / 1024 / 768 / 390에서 horizontal overflow·form/result clipping·header/H1 overlap 없음, CSS 로드 및 console error 0건.
+- Production baseline QA: Homepage, Tools, Guides, Reference, Printer Utilization, Belt Steps/mm에서 canonical·GA4·H1·overflow·기본 결과 정상. Selling Price의 결합 비율/blank 오류를 Production에서 재현한 뒤 수정했다.
+- 구현 commit: `27bdb1298f8a82995643318a7e6fba3e5b82349e` (`Fix selling price validation boundaries`).
+- 최종 공개 페이지: **74**. 최종 calculator: **37**. 신규 페이지/cluster 없음.
+- 배포 상태: handover 기록 시점에는 push 및 변경 URL Production 재검증 전. 원격 반영 후 별도 closeout 기록을 추가한다.
