@@ -19,5 +19,12 @@ const cases=[
 function form(type,values){return{dataset:{calculator:type},elements:Object.fromEntries(Object.entries(values).map(([key,value])=>[key,{value:String(value)}]))}};
 const errors=[];
 for(const [type,values,invalid] of cases){const f=form(type,values);__calculate(f);if(formError.textContent||!resultMain.textContent||resultMain.textContent==='—'||/NaN|Infinity/.test(resultMain.textContent+resultDetails.innerHTML))errors.push(`${type}: invalid default result`);f.elements[invalid].value='-1';__calculate(f);if(!formError.textContent||resultMain.textContent!=='—')errors.push(`${type}: invalid input not rejected`)}
+const sellingPrice=form('selling-price',{cost:12,fixed:2,fee:12,margin:25});
+__calculate(sellingPrice);
+if(formError.textContent||resultMain.textContent!=='22.22')errors.push('selling-price: invalid default result');
+sellingPrice.elements.fee.value='60';sellingPrice.elements.margin.value='40';__calculate(sellingPrice);
+if(!formError.textContent||resultMain.textContent!=='—'||/NaN|Infinity|∞/.test(resultDetails.innerHTML))errors.push('selling-price: combined fee and margin boundary not rejected');
+sellingPrice.elements.fee.value='';sellingPrice.elements.margin.value='25';__calculate(sellingPrice);
+if(!formError.textContent||resultMain.textContent!=='—')errors.push('selling-price: blank input did not clear the result');
 if(errors.length)throw Error(errors.join('\n'));
-console.log(`Calculator QA PASS: ${cases.length} new calculators passed default and invalid-input checks.`);
+console.log(`Calculator QA PASS: ${cases.length} existing calculators plus selling-price boundary regression passed.`);
