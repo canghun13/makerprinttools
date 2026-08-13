@@ -707,3 +707,9 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Implementation commit: `b9cc9117b697ef80853bdb87f3c7b5f34cb67acc` (`Build shared calculator print records`).
 - Final closeout commit: this handover update; verify local and remote `main` match after push.
 - Current status: print records are complete for the existing 37-calculator surface. Next priority remains Search Console/sitemap indexing confirmation and user-feedback-driven improvements; do not expand the calculator cluster without evidence of a real gap.
+
+## 2026-08-13 — Calculator print deployment verification
+
+- GitHub Pages workflow `31678261012` (`pages build and deployment`) completed successfully for `62077c08c8dcf18300f961c30803d591257ab6fc`.
+- Public production assets returned HTTP 200 and contain the deployed common implementation: `/assets/js/site.js` contains `function addPrintRecord(form)` and `/assets/css/site.css` contains the `print-record-ready` print rules. The deployed calculator HTML had `Last-Modified: Thu, 13 Aug 2026 07:34:14 GMT`.
+- The in-app browser retained a previously cached production `site.js`, so its existing public tab continued to show the old page runtime after deploy. Local Chromium Print actions and all-calculator browser QA were completed against the exact committed static files; direct public asset verification confirms the new runtime and CSS are on production. No source, badge, calculator logic, or public-page inventory change was made after the implementation commit.
