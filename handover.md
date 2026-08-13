@@ -704,6 +704,6 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Full quality gate: `node --check assets/js/site.js`, `print-qa`, `calculator-qa`, `production-planning-qa`, `motion-mechanics-qa`, `qa`, and `content-qa` all PASS. Final static inventory remains **74 public HTML pages**, **74 canonical URLs**, **74 sitemap URLs**, and **37 calculators**. Internal links, orphan reachability, duplicate IDs, H1 count, robots, GA4 coverage/duplication, sitemap parity, calculator validation, and finite result checks PASS.
 - User-managed homepage directory badge/link source, including KittyLaunch, LaunchBuff, BoostDomainRating, and existing badges, was not edited.
 - Changed files: `assets/css/site.css`, `assets/js/site.js`, and `scripts/print-qa.mjs` only, plus this handover record. No API, database, screen-design rewrite, calculator logic rewrite, or user-managed badge change.
-- Implementation commit: `Pending closeout commit — Build shared calculator print records`.
+- Implementation commit: `b9cc9117b697ef80853bdb87f3c7b5f34cb67acc` (`Build shared calculator print records`).
 - Final closeout commit: this handover update; verify local and remote `main` match after push.
 - Current status: print records are complete for the existing 37-calculator surface. Next priority remains Search Console/sitemap indexing confirmation and user-feedback-driven improvements; do not expand the calculator cluster without evidence of a real gap.
