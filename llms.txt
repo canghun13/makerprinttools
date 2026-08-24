@@ -63,3 +63,13 @@
 - [Step Pulse Rate Calculator](https://makerprinttools.com/tools/motion/step-pulse-rate-calculator/): Calculate pulse frequency, motor RPM, and pulse interval at a target speed
 - [3D Printer Motion Settings Guide](https://makerprinttools.com/guides/3d-printer-motion-settings/): A measurement-first workflow for motion settings
 - [Stepper Motion Reference](https://makerprinttools.com/reference/stepper-motion-reference/): Formula definitions, conversions, and cautions for stepper-driven motion
+
+## Filament Recycling and Extrusion
+- [Filament Recycling Tools](https://makerprinttools.com/tools/recycling/): Batch formulation, process yield, extrusion throughput, diameter quality, and level-wind planning
+- [Recycled Filament Blend Calculator](https://makerprinttools.com/tools/recycling/recycled-filament-blend-calculator/): Weigh recycled polymer, virgin polymer, and additive for a target usable batch
+- [Filament Recycling Yield Calculator](https://makerprinttools.com/tools/recycling/filament-recycling-yield-calculator/): Follow mass through sorting, shredding, extrusion, and QC losses
+- [Filament Extrusion Rate Calculator](https://makerprinttools.com/tools/recycling/filament-extrusion-rate-calculator/): Calculate mass output and batch time from cooled diameter, density, and line speed
+- [Filament Diameter Quality Checker](https://makerprinttools.com/tools/recycling/filament-diameter-quality-checker/): Summarize diameter variation, tolerance pass rate, and optional paired-axis ovality
+- [Filament Winder Traverse Calculator](https://makerprinttools.com/tools/recycling/filament-winder-traverse-calculator/): Coordinate spool RPM and traverse speed as wound diameter grows
+- [Filament Recycling Workflow Guide](https://makerprinttools.com/guides/filament-recycling-workflow/): A measured process from material sorting through accepted spool labeling
+- [Filament Extrusion Reference](https://makerprinttools.com/reference/filament-extrusion-reference/): Mass-balance, throughput, diameter-statistics, ovality, and winding formulas

@@ -15,7 +15,7 @@ for(const file of calculators){
   if(!/<form class="calc-panel"[^>]*data-calculator=/i.test(html))errors.push(`${relative}: missing common calculator form`);
   if(!/<aside class="result-panel"/i.test(html))errors.push(`${relative}: missing result panel`);
   if(!/id="print-result"/.test(html))errors.push(`${relative}: missing print control`);
-  if(!/src="\/assets\/js\/site\.js"/.test(html))errors.push(`${relative}: missing common print runtime`);
+  if(!/src="\/assets\/js\/site\.js(?:\?[^\"]+)?"/.test(html))errors.push(`${relative}: missing common print runtime`);
 }
 
 for(const needle of ['.print-record{display:none}', '@page{size:A4 portrait', '.print-record-ready .calc-panel{display:none!important}', '.print-record-ready .result-panel', '.print-input-list', 'break-inside:avoid-page']){
@@ -26,6 +26,6 @@ for(const needle of ['function addPrintRecord(form)', "form.addEventListener('re
 }
 
 console.log(`Print QA checked ${calculators.length} calculator pages.`);
-if(calculators.length!==37)errors.push(`calculator count changed: expected 37, got ${calculators.length}`);
+if(calculators.length!==42)errors.push(`calculator count changed: expected 42, got ${calculators.length}`);
 if(errors.length)throw Error(errors.join('\n'));
-console.log('Print QA PASS: shared print runtime, record structure, controls, and 37-page coverage are present.');
+console.log('Print QA PASS: shared print runtime, record structure, controls, and 42-page coverage are present.');
