@@ -831,6 +831,18 @@ Metric / Imperial 단위는 해당 계산기에 필요할 경우 지원.
 - Full automated quality gate PASS: JavaScript syntax; new `filament-recycling-qa`; existing calculator, Production Planning, Motion Mechanics, and Print QA; static structure/links/duplicate IDs/H1/robots/GA4/sitemap; homepage reachability; and `git diff --check`.
 - Final local inventory before push: **82 public HTML pages**, **42 calculators**, **30 Guide/Reference/Comparison/Practical pages excluding the two hubs**, **82 canonical URLs**, **82 sitemap URLs**, Workbench **01–08**.
 - Homepage `index.html` was not edited. KittyLaunch, LaunchBuff, BoostDomainRating, Sell With Boost, Twelve Tools, Findly, and all other user-managed directory badge/link source remains untouched.
-- Implementation commit: pending after final staged review. Production QA and final closeout commit must be added after push/deploy.
+- Implementation commit: `e34f9ac1c4aa1aa24a8e76729a83b75421d9dd5c` (`Build filament recycling and extrusion tools`).
 - Known external issues unchanged: Search Console/sitemap submission and Contact inbox reception are outside the repository. New workflow formulas require real batch and machine verification; the tools intentionally do not prescribe safe operating temperatures, ventilation, guarding, or electrical design.
 - Next priority after deployment: observe Search Console query/page data for the new cluster and the improved Line Width page. Do not add another cluster without fresh evidence.
+
+## 2026-08-24 — Filament Recycling & Extrusion deployment closeout
+
+- GitHub Pages workflow [`32682785452`](https://github.com/canghun13/makerprinttools/actions/runs/32682785452) completed successfully for implementation commit `e34f9ac1c4aa1aa24a8e76729a83b75421d9dd5c`.
+- Production HTTP QA PASS: the eight new public URLs, `site.css`, cache-busted common `site.js`, and `filament-recycling.js` all returned HTTP 200. Production `sitemap.xml` returned HTTP 200, contains **82** `<loc>` entries, and includes all eight new canonical URLs.
+- Production SEO/runtime QA PASS: all eight new pages at 1440 and 390 had the expected title, one visible H1, exact canonical, one GA4 loader, no accidental `noindex`, and no horizontal overflow. The public browser console contained no errors.
+- Production calculator QA PASS: all five tools produced their documented finite defaults and changed results, rejected a cleared required field with a specific message while clearing the result to `—`, and restored defaults with Reset. Each page initialized exactly one Print Record and exposed one Copy control; the representative Blend Copy action placed the complete result breakdown on the clipboard and changed the button label to `Copied`.
+- Production visual QA PASS: the 1440px cluster hub and 390px Diameter Quality Checker preserve the independent MakerPrintTools workbench treatment, readable hierarchy, intact brand/header, and single-column mobile input flow without clipping.
+- Final inventory: **82 public HTML pages**, **42 calculators**, **30 Guide/Reference/Comparison/Practical content pages excluding the two hubs**, **82 canonical URLs**, **82 sitemap URLs**, Workbench **01–08**.
+- Homepage `index.html` and the user-managed KittyLaunch, LaunchBuff, BoostDomainRating, Sell With Boost, Twelve Tools, Findly, and other directory badge/link source were not changed.
+- Known external follow-up: observe Search Console discovery, indexing, query, and page data; verify formulas against real recycling batches and machine measurements. Do not add another cluster without fresh demand or usage evidence.
+- Implementation commit: `e34f9ac1c4aa1aa24a8e76729a83b75421d9dd5c`. Final closeout commit: this handover update (`Record filament recycling deployment QA`).
