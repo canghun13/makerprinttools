@@ -27,10 +27,10 @@
       }
       if (type === 'required-printers') {
         const good = value('goodUnits'), parts = value('partsPerCycle'), cycle = value('cycleHours'), days = value('days'), hours = value('hoursPerDay'), availability = value('availability'), utilization = value('utilization'), failure = value('failureRate');
-        if (![good, parts, cycle, days, hours].every(positive) || ![availability, utilization, failure].every(percentage) || failure >= 100) throw Error('Use positive workload and schedule values; availability, utilization, and failure must be below 100%.');
-        const attempts = good / (1 - failure / 100), required = attempts / parts * cycle, perPrinter = days * hours * availability / 100 * utilization / 100, printers = Math.ceil(required / perPrinter), margin = printers * perPrinter - required;
-        main = `${fmt(printers, 0)} printers required`;
-        lines = [['Total required attempts', fmt(attempts)], ['Required printer-hours', fmt(required)], ['Capacity per printer', fmt(perPrinter)], ['Spare capacity with rounded count', fmt(margin)]];
+        if (![good, parts, cycle, days, hours].every(positive) || ![availability, utilization, failure].every(percentage) || failure >= 100) throw Error('Use positive workload and schedule values, availability and utilization from 0–100%, and a failure rate below 100%.');
+        const attempts = Math.ceil(good / (1 - failure / 100)), cycles = Math.ceil(attempts / parts), required = cycles * cycle, perPrinter = days * hours * availability / 100 * utilization / 100, printers = Math.ceil(required / perPrinter), fleetCapacity = printers * perPrinter, margin = fleetCapacity - required;
+        main = `${fmt(printers, 0)} printer${printers === 1 ? '' : 's'} required`;
+        lines = [['Planned attempted unit slots', fmt(attempts, 0)], ['Whole print cycles', fmt(cycles, 0)], ['Required printer-hours', fmt(required)], ['Productive capacity per printer', fmt(perPrinter)], ['Fleet capacity at rounded count', fmt(fleetCapacity)], ['Spare productive capacity', fmt(margin)]];
       }
       if (type === 'queue-completion') {
         const queue = value('queueHours'), printers = value('printers'), hours = value('hoursPerDay'), availability = value('availability'), utilization = value('utilization'), turnaround = value('turnaround');
