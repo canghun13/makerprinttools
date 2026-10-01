@@ -88,5 +88,11 @@ Expansion considered but **not entered**: Priority A wins. Full handover/exclusi
 
 ## Deployment
 
-- Implementation commit / CI / public re-verification: pending the implementation push; append exact verified results below after deployment.
+- Implementation commit: `879151d7ba35d7f026a7ce3e2468ba573060306d` — `Fix per-printer cycle allocation for deadlines`; successfully pushed to `main`.
+- GitHub Pages [run 36798771478](https://github.com/canghun13/makerprinttools/actions/runs/36798771478) completed successfully for that exact implementation SHA. Public target HTML and cache-busted production JS returned HTTP 200 and contained the updated implementation.
+- Actual public browser: nine-unit boundary **three printers**, eight-unit control **two**, exact one-cycle singular result **one**, decimal 0.3/0.1 boundary **one**, infeasible/fractional/blank inputs clear output, error Copy/Print guards, successful Copy diagnostics and Reset **four** all PASS. No captured console error.
+- Public target tested at explicitly verified actual **1440 / 1280 / 1024 / 900 / 768 / 390px**, no overflow/clipped input or button; canonical unchanged and one GA loader at every width. At actual 390px the valid one-billion-unit result is **27,777,778 printers**, finite with no overflow.
+- Public screenshot and exact A4 CSS/record preview were saved as local QA artifacts outside the repository; no local machine path or private raw analytics is committed. Native print-dialog/pagination limitation remains as stated above.
+- Homepage and user-managed badge block are unchanged against the starting commit. Working tree was clean after implementation push; local HEAD, cached origin/main, and actual remote main all equaled the implementation SHA before this documentation-only closeout. Final closeout SHA is obtained with `git log -1`, then verified against actual remote.
+- Oct 1 public QA can contaminate future direct/pageview totals; it is not organic demand. Original report files became inaccessible after the successful reads; no raw copies or source-hash preservation are claimed.
 - Next state: observe actual Required Printer Count/Line Width query and page cohorts; request current segmented reports next review rather than infer page/query joins; change the protected homepage closing tag only with explicit user authorization.

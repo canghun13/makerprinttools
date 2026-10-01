@@ -2,7 +2,7 @@
 
 ## Latest operational state — 2026-10-01
 
-- Current phase: weekly operations, **FIX — technical defect corrected**, targeted Required Printer Count cycle-allocation fix. Implementation QA complete; deployment closeout is recorded below after public verification.
+- Current phase: weekly operations, **FIX — technical defect corrected**, targeted Required Printer Count cycle-allocation fix. Implementation and public deployment verification complete; see the closeout below.
 - Current inventory: **82 public/indexable pages / 42 calculators / 8 Workbenches / 19 Guides / 11 References**, excluding the two Guide/Reference hubs. No new public page or cluster.
 - Source-of-truth start: `a4d969d6692d4851b64dbd169f91176e35523660`; clean main; local/cached/actual remote equal; safe pull already up to date.
 - Current-session reports were successfully read: GSC through **Sep 28**, Coverage through **Sep 21**, GA4 **Sep 3–30**. Originals became inaccessible on a later re-read; no folder search or report reconstruction was performed. See [weekly research](research/weekly-growth-review-2026-10-01.md) for sources/ranges/limitations.
@@ -14,6 +14,15 @@
 - Known protected finding: homepage's user-managed badge block is followed by one extra closing `div`; current browser layout normal, source preserved. Tools hub utility text still says “Twenty-one tools”; preserved in this single technical-fix scope. These prevent claiming a flawless full-site content/markup audit.
 - Latest implemented cluster remains Filament Recycling & Extrusion (Aug 24); latest growth upgrade remains Required Printer Count (Sep 7). Latest expansion NO-GO remains Aug 26. This session did not enter discovery or reopen exclusions.
 - Next priorities: observe corrected planner and Line Width with fresh segmented exports; consider Model Scale only when page/query evidence supports a small upgrade; touch protected homepage markup only with explicit user authorization.
+
+### Deployment closeout — 2026-10-01
+
+- Implementation commit: `879151d7ba35d7f026a7ce3e2468ba573060306d` — `Fix per-printer cycle allocation for deadlines`; pushed to `main`. GitHub Pages [run 36798771478](https://github.com/canghun13/makerprinttools/actions/runs/36798771478) completed successfully for that exact SHA.
+- Public target HTML and `assets/js/production-planning.js?v=20261001` both returned HTTP 200 with the corrected implementation. Public browser passed the nine-unit/three-printer boundary, eight-unit/two-printer control, singular one-printer case, decimal boundary, infeasible/fractional/blank validation, Copy and Reset. No console error was captured.
+- Public viewport dimensions were explicitly confirmed at **1440 / 1280 / 1024 / 900 / 768 / 390px**; no overflow or clipped control at any width, one GA4 loader and unchanged canonical. One-billion-unit valid result remains finite and fits at actual 390px. Local 90 responsive checks and A4 CSS/record preview remain documented above; native print pagination is not certified.
+- User-managed homepage source and badge links/styles/order remain byte-for-byte unchanged against the starting commit. No new page, dependency, API, DB, environment setting, or analytics configuration.
+- Oct 1 live QA can add direct/QA pageviews to future analytics. Do not attribute those to organic growth.
+- This documentation-only closeout follows the implementation commit; resolve its final SHA with `git log -1`. Historical prior commit: `a4d969d6692d4851b64dbd169f91176e35523660`.
 
 Historical sections below retain their original dated inventory and decisions; use this latest state and the deployment closeout for current counts.
 
