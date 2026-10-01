@@ -1,5 +1,22 @@
 # MakerPrintTools Handover
 
+## Latest operational state — 2026-10-01
+
+- Current phase: weekly operations, **FIX — technical defect corrected**, targeted Required Printer Count cycle-allocation fix. Implementation QA complete; deployment closeout is recorded below after public verification.
+- Current inventory: **82 public/indexable pages / 42 calculators / 8 Workbenches / 19 Guides / 11 References**, excluding the two Guide/Reference hubs. No new public page or cluster.
+- Source-of-truth start: `a4d969d6692d4851b64dbd169f91176e35523660`; clean main; local/cached/actual remote equal; safe pull already up to date.
+- Current-session reports were successfully read: GSC through **Sep 28**, Coverage through **Sep 21**, GA4 **Sep 3–30**. Originals became inaccessible on a later re-read; no folder search or report reconstruction was performed. See [weekly research](research/weekly-growth-review-2026-10-01.md) for sources/ranges/limitations.
+- GSC actual recent/prior windows: **189 impressions / 2 clicks / 14.02 weighted position** (Sep 22–28) versus **99 / 0 / 17.21** (Sep 15–21), impressions **+90.9%**. Whole export **1,751 / 10 / 0.5711% CTR**. Visible query breadth **170**, not the full query universe; weekly page/query segmentation unavailable.
+- Coverage: **15 discovered-not-indexed**, stable since Aug 18; crawled-not-indexed and total indexed unavailable. All 15 exported URLs passed current HTTP/Googlebot-UA/canonical/GA/noindex checks. Indexing delay alone does not justify SEO edits.
+- GA4: **27 active users**; first-user google/organic **5 users**; session google/organic **9 sessions**. Direct/QA pageviews are not organic demand. No matched prior GA4 window.
+- Reproduced production defect: nine good units / four parts per six-hour cycle / one nine-hour window was **two printers**, but only **three** can complete three cycles. Fixed by flooring cycles per printer before rounding the required fleet up. No-cycle windows clear output and block Copy/Print. Default remains four printers; spare cycle capacity and unusable time fragments are now separate.
+- Quality gate: all existing automated suites, new 12 fixtures/250 allocation cases, 82-page indexability/link checks, 42 Print contracts, 90 responsive browser combinations across six widths, and five Production interaction controls PASS. Exact A4 print CSS/current-input record preview PASS; connected native print dialog could not be automated, so no native pagination PASS is claimed.
+- Known protected finding: homepage's user-managed badge block is followed by one extra closing `div`; current browser layout normal, source preserved. Tools hub utility text still says “Twenty-one tools”; preserved in this single technical-fix scope. These prevent claiming a flawless full-site content/markup audit.
+- Latest implemented cluster remains Filament Recycling & Extrusion (Aug 24); latest growth upgrade remains Required Printer Count (Sep 7). Latest expansion NO-GO remains Aug 26. This session did not enter discovery or reopen exclusions.
+- Next priorities: observe corrected planner and Line Width with fresh segmented exports; consider Model Scale only when page/query evidence supports a small upgrade; touch protected homepage markup only with explicit user authorization.
+
+Historical sections below retain their original dated inventory and decisions; use this latest state and the deployment closeout for current counts.
+
 ## 1. 프로젝트 개요
 
 - 프로젝트명: MakerPrintTools

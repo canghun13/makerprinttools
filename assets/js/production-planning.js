@@ -5,6 +5,24 @@
   const result = $('#result-main');
   const details = $('#result-details');
   const error = $('#form-error');
+  const requiredPlanner = form.dataset.calculator === 'required-printers';
+  const setRecordActions = enabled => {
+    if (!requiredPlanner) return;
+    for (const selector of ['#print-result', '#copy-result']) {
+      const button = $(selector);
+      if (button) button.disabled = !enabled;
+    }
+  };
+  if (requiredPlanner) {
+    const record = $('.print-record');
+    if (record) {
+      const note = document.createElement('p');
+      note.textContent = 'Complete cycles stay on one printer. Time fragments cannot be pooled across machines. Verify uninterrupted operating windows and actual yield.';
+      const url = document.createElement('p');
+      url.textContent = $('link[rel="canonical"]')?.href || '';
+      record.append(note, url);
+    }
+  }
   const fmt = (value, digits = 2) => Number(value).toLocaleString(undefined, { maximumFractionDigits: digits, minimumFractionDigits: 0 });
   const value = name => {
     const raw = form.elements[name]?.value;
@@ -12,8 +30,8 @@
   };
   const positive = number => Number.isFinite(number) && number > 0;
   const percentage = number => Number.isFinite(number) && number >= 0 && number <= 100;
-  const clear = message => { result.textContent = '—'; details.innerHTML = ''; error.textContent = message; };
-  const show = (main, lines) => { error.textContent = ''; result.textContent = main; details.innerHTML = lines.map(([label, output]) => `<p><strong>${label}:</strong> ${output}</p>`).join(''); };
+  const clear = message => { result.textContent = '—'; details.innerHTML = ''; error.textContent = message; setRecordActions(false); };
+  const show = (main, lines) => { error.textContent = ''; result.textContent = main; details.innerHTML = lines.map(([label, output]) => `<p><strong>${label}:</strong> ${output}</p>`).join(''); setRecordActions(true); };
   function calculate() {
     const type = form.dataset.calculator;
     try {
@@ -28,9 +46,21 @@
       if (type === 'required-printers') {
         const good = value('goodUnits'), parts = value('partsPerCycle'), cycle = value('cycleHours'), days = value('days'), hours = value('hoursPerDay'), availability = value('availability'), utilization = value('utilization'), failure = value('failureRate');
         if (![good, parts, cycle, days, hours].every(positive) || ![availability, utilization, failure].every(percentage) || failure >= 100) throw Error('Use positive workload and schedule values, availability and utilization from 0–100%, and a failure rate below 100%.');
-        const attempts = Math.ceil(good / (1 - failure / 100)), cycles = Math.ceil(attempts / parts), required = cycles * cycle, perPrinter = days * hours * availability / 100 * utilization / 100, printers = Math.ceil(required / perPrinter), fleetCapacity = printers * perPrinter, margin = fleetCapacity - required;
+        if (![good, parts].every(Number.isSafeInteger)) throw Error('Use positive whole numbers for good units and parts per print cycle.');
+        const attempts = Math.ceil(good / (1 - failure / 100)), cycles = Math.ceil(attempts / parts), required = cycles * cycle, perPrinter = days * hours * availability / 100 * utilization / 100;
+        if (![attempts, cycles].every(Number.isSafeInteger) || ![required, perPrinter].every(positive)) throw Error('The schedule is outside the supported finite range or has no productive capacity.');
+        // A complete job cannot pool leftover hours from different printers.
+        // Normalize only floating-point noise at an exact cycle boundary (0.3 / 0.1).
+        const cycleBudget = perPrinter / cycle, nearest = Math.round(cycleBudget);
+        const normalizedBudget = Math.abs(cycleBudget - nearest) <= Number.EPSILON * Math.max(1, Math.abs(cycleBudget)) * 4 ? nearest : cycleBudget;
+        const cyclesPerPrinter = Math.floor(normalizedBudget);
+        if (cyclesPerPrinter < 1) throw Error('No complete print cycle fits one printer before this deadline. Extend the schedule or shorten the cycle; adding printers cannot split a cycle.');
+        if (!Number.isSafeInteger(cyclesPerPrinter)) throw Error('The cycle capacity is outside the supported whole-number range.');
+        const printers = Math.ceil(cycles / cyclesPerPrinter), fleetCycles = printers * cyclesPerPrinter, spareCycles = fleetCycles - cycles, fleetCapacity = printers * perPrinter;
+        const usableCapacity = fleetCycles * cycle, fragments = Math.max(0, fleetCapacity - usableCapacity), spareHours = spareCycles * cycle;
+        if (![printers, fleetCycles, spareCycles].every(Number.isSafeInteger) || ![fleetCapacity, usableCapacity, fragments, spareHours].every(Number.isFinite)) throw Error('The fleet result is outside the supported finite range.');
         main = `${fmt(printers, 0)} printer${printers === 1 ? '' : 's'} required`;
-        lines = [['Planned attempted unit slots', fmt(attempts, 0)], ['Whole print cycles', fmt(cycles, 0)], ['Required printer-hours', fmt(required)], ['Productive capacity per printer', fmt(perPrinter)], ['Fleet capacity at rounded count', fmt(fleetCapacity)], ['Spare productive capacity', fmt(margin)]];
+        lines = [['Planned attempted unit slots', fmt(attempts, 0)], ['Whole print cycles', fmt(cycles, 0)], ['Required printer-hours', fmt(required)], ['Productive capacity per printer', fmt(perPrinter)], ['Complete cycles per printer', fmt(cyclesPerPrinter, 0)], ['Fleet complete-cycle capacity', fmt(fleetCycles, 0)], ['Spare complete cycles', fmt(spareCycles, 0)], ['Spare usable cycle-hours', fmt(spareHours)], ['Unusable time fragments across fleet (hours)', fmt(fragments)]];
       }
       if (type === 'queue-completion') {
         const queue = value('queueHours'), printers = value('printers'), hours = value('hoursPerDay'), availability = value('availability'), utilization = value('utilization'), turnaround = value('turnaround');
