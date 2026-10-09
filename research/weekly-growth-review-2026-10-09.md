@@ -86,7 +86,14 @@ Expansion considered **yes**, entered **no**. Priority A wins because a public d
 
 ## Deployment
 
-- Pending implementation commit/push, Pages deployment and actual public-browser verification. Closeout below will record observed results rather than equating CI with production QA.
+- Implementation commit: `b64c38cbc40d451b6d3c9cad440a4fc8d2c475c1` — `Fix decimal boundary layer counts`; pushed successfully, no timeout. Immediate `ls-remote` and fetch confirmed local HEAD = origin/main = actual remote main = that SHA; clean working tree before this documentation closeout.
+- GitHub Pages [run 37870161502](https://github.com/canghun13/makerprinttools/actions/runs/37870161502) completed successfully for that exact SHA. Public target HTML and `site.js?v=20261009` returned HTTP 200; the public JS matches the committed source after line-ending normalization.
+- **Actual public Chrome QA PASS:** default 250; corrected 0.8/0.2/0.2 = four; 0.6 control = three; truly taller 0.80001 and 0.800000000000001 = five; single-layer grammar; one-billion-layer finite result; invalid/blank/zero/negative/text/unsafe counts clear output, disable Copy/Print; Reset restores defaults; successful Copy, keyboard focus and mobile menu.
+- Public target plus nine representative pages × six widths = **60/60 combinations PASS**, explicitly verified at **1440/1280/1024/900/768/390 px**. All **42/42 calculator defaults** remain finite, no overflow. **Zero captured console/page errors and first-party resource failures.** Public 390px and print screenshots visually inspected.
+- Public Print current-input record/URL/notes and A4 CSS preview PASS, record height **444.55 px**, no overflow, controls/header/footer hidden. Native print dialog and physical pagination remain unverified; QA substituted only the `window.print` invocation.
+- All **12 current Coverage URLs** returned 200 with a Googlebot UA, correct self-canonical and no noindex header/meta. This is a user-agent response probe, not authenticated Googlebot crawling or an indexing guarantee. HTTP apex and HTTPS www both ended at HTTPS apex with 200; robots allows `/`, sitemap remains 82 URLs.
+- Homepage/badge source, CSS, sitemap, robots and llms remain unchanged against synchronized start. No new public page or cluster, no dependency/environment/authentication change.
+- Final closeout commit: this documentation-only research/handover update; resolve exact SHA with `git log -1` and verify against actual remote after push. No production code changed after the public QA above.
 
 ## Next state
 
