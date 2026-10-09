@@ -1,6 +1,21 @@
 # MakerPrintTools Handover
 
-## Latest operational state — 2026-10-01
+## Latest operational state — 2026-10-09
+
+- Weekly decision: **FIX — technical defect corrected**, Layer Count decimal-boundary rounding. Public 0.8 mm height / 0.2 mm first layer / 0.2 mm regular layer returned five instead of four; integer decimal arithmetic fixes this without snapping truly higher inputs down.
+- Start local/cached SHA `13c98f6871fcd099ba63f8f85612f029d0cdbca4`, actual remote `8a2b00d6711b536fd4f7ce75147f3c75b44af66c`; clean tree, 0 ahead / 6 behind, safe fast-forward to actual remote before work.
+- Recounted inventory: **82 public/indexable source pages / 42 calculators / 8 Workbenches / 19 Guides / 11 References / 82 canonicals / 82 sitemap URLs**, excluding Guide/Reference hubs. Actual indexed count unavailable.
+- All five current-session reports accessible; GSC daily **Jul 21–Oct 6**, Coverage **Jul 24–Oct 4**, GA4 **Sep 11–Oct 8**. Supplementary keyword/page reports lack verified platform/period metadata. Exact files only; raw analytics not committed. See [weekly research](research/weekly-growth-review-2026-10-09.md).
+- GSC latest **214 impressions / 3 clicks / 18.65 weighted position** (Sep 30–Oct 6) versus **191 / 3 / 13.87** (Sep 23–29): impressions **+12.04%**, clicks unchanged, weighted position worse by 4.78. Whole export **1,988 / 14 / 0.7042% CTR**; 190 visible queries, 67 page rows. Page/query totals are not substituted for property totals.
+- Coverage **15 → 12 discovered-not-indexed on Sep 22**, stable through Oct 4; crawled-not-indexed and total indexed unavailable. Epoch crawl values are placeholders. GA4 **23 active users / 18 new**, first-user Google organic **9 users**, session Google organic **14**; prior 28-day ranges overlap, so no disjoint weekly organic comparison. Direct/QA views do not establish tool demand.
+- Existing candidates: Layer Count DO NOW for reproduced correctness; Model Scale HOLD (118 impressions / one click / 28.85; no weekly page/query join); Line Width OBSERVE (329 / ten / 22.15 after recent improvement). Required Printer Count remains a control after Oct 1 fix. Expansion considered but not entered: Priority A wins, **0 new discovery families/cluster/pages**, not an expansion NO-GO research claim.
+- Scope: Layer Count arithmetic, safe-count error, Reset, error Copy/Print guards, singular result and target-only print URL/note in shared runtime; target-only runtime cache version in HTML/generator; new Layer Count QA. No title/H1/canonical/GA4/content/link/CSS/sitemap or other public-page edit.
+- Pre-push QA PASS: 13 known / 732 decimal-grid cases, all existing formula/static/reachability suites, **42 Print contracts**, **60 responsive browser combinations** across 1440/1280/1024/900/768/390 and **42 finite calculator defaults**, target Copy/Reset/focus/mobile/error checks. A4 CSS/current-record preview PASS, native print dialog/pagination not certified. Temporary ASCII QA copy accommodates the existing path-sensitive runner.
+- Latest cluster stays Filament Recycling & Extrusion (Aug 24); latest growth upgrade stays Required Printer Count (Sep 7); latest expansion NO-GO stays Aug 26. Historical exclusion boundaries remain in force; no family was renamed/reopened.
+- User-managed Homepage KittyLaunch, LaunchBuff, BoostDomainRating and all other directory badges/links/order/styles remain unchanged. Protected legacy homepage closing tag and old Tools utility wording are not repaired in this one-action scope.
+- Deployment: implementation push and actual public verification pending; the deployment closeout will replace this pending state. Next: observe matched search cohorts and Coverage, revisit Model Scale only with confirmed narrow evidence. This session's public QA may contaminate future direct/pageview reports.
+
+## Previous operational state — 2026-10-01
 
 - Current phase: weekly operations, **FIX — technical defect corrected**, targeted Required Printer Count cycle-allocation fix. Implementation and public deployment verification complete; see the closeout below.
 - Current inventory: **82 public/indexable pages / 42 calculators / 8 Workbenches / 19 Guides / 11 References**, excluding the two Guide/Reference hubs. No new public page or cluster.
