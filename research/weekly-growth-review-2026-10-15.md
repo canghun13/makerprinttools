@@ -78,7 +78,13 @@ Expansion considered **yes**, discovery entered **no**. Priority A wins. Histori
 
 ## Deployment
 
-- Implementation push / CI / actual public re-verification pending; append exact verified commit/run results after deployment. No product changes planned after successful QA.
+- Implementation commit: `e6d5bad6a814588f75e7a37ab729984968ca9099` — `Fix volumetric flow validation and non-finite results`. Push succeeded without timeout; local HEAD/cached origin/main/actual remote all matched; clean tree before this documentation-only closeout.
+- GitHub Pages [run 38690798586](https://github.com/canghun13/makerprinttools/actions/runs/38690798586) completed successfully for that exact SHA. Target HTML and `site.js?v=20261015` returned HTTP 200; public runtime equals committed source after line-ending normalization.
+- **Actual public Chrome QA PASS:** default nine; changed 0.4/0.25/120/15 produces **12 mm³/s / 80% / 150 mm/s**, Copy contains the complete breakdown, Reset restores nine. Blank/zero/negative/text/unsafe inputs clear output and disable Copy/Print. Unknown-limit zero remains valid, large valid input is finite, keyboard focus and mobile menu work.
+- Public **66/66 responsive combinations** across explicitly confirmed **1440/1280/1024/900/768/390px**, **42/42 finite calculator defaults**, and **six existing changed-input/restore controls** PASS. No overflow/clipped control/brand/H1 overlap, captured console/page errors or first-party resource failures. Corrected Oct 1 Required Printer Count and Oct 9 Layer Count cases remain controls, not new edits.
+- Public A4 Chrome PDF PASS: **one page**, all four current values/units, title, current result/breakdown, canonical URL and note; no controls/navigation/footer. Extracted text checked, Poppler rendering visually inspected. Desktop invalid-state and mobile screenshots inspected. Physical printer/interactive print dialog remain untested.
+- No product changes after public verification. Homepage user-managed source/CSS/sitemap/robots/llms remain unchanged against synchronized start. Temporary browser instances/servers closed by the QA script; user browser windows/settings were not modified.
+- Final closeout commit is this documentation-only research/handover update; resolve SHA with `git log -1` and compare to actual remote after push. This session's live QA can contaminate future direct/pageview totals, not organic demand.
 
 ## Next state
 
