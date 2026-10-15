@@ -1,6 +1,21 @@
 # MakerPrintTools Handover
 
-## Latest operational state — 2026-10-09
+## Latest operational state — 2026-10-15
+
+- Weekly decision: **FIX — technical defect corrected**, Volumetric Flow zero/blank-height validation and non-finite output guard. Public zero/blank layer height produced `0 mm³/s` and `∞ mm/s` with Copy/Print enabled; explicit validation now rejects this, clears output and blocks actions. Known limit `0` still means unknown.
+- Start local/cached `8a2b00d6711b536fd4f7ce75147f3c75b44af66c`; actual remote `36bc09e8bf62ab89b160f1928ed141fe5b5f5005`. Clean, 0 ahead / 2 behind; safe fast-forward pull. Oct 9 Layer Count and all existing work preserved.
+- Recounted **82 public/indexable source pages / 42 calculators / 8 Workbenches / 19 Guides / 11 References / 82 canonicals/sitemap URLs**, excluding Guide/Reference hubs. No new page/tool/cluster; indexed total unavailable.
+- All five exact current attachments accessible. GSC **Jul 21–Oct 12**, Coverage **Jul 24–Oct 9**, GA4 **Sep 17–Oct 14**. Supplementary query/page CSVs lack verified platform/date metadata. No folder search or raw analytics committed. See [weekly research](research/weekly-growth-review-2026-10-15.md).
+- GSC recent **242 impressions / zero clicks / 13.7967 weighted position** (Oct 6–12) vs **208 / four / 19.5740** (Sep 29–Oct 5): impressions **+16.35%**, clicks −4, position 5.78 better; mixed small-sample signal. Whole export **2,201 / 14 / 0.6361% CTR**; 195 visible queries, 67 page rows. No weekly page/query join or causal uplift claim.
+- Coverage **12 discovered-not-indexed**, stable since Sep 22 through Oct 9; crawled-not-indexed / total indexed unknown. All 12 URLs passed current Googlebot-UA/HTTP/canonical/noindex/GA probes; not authenticated crawler/indexing proof.
+- GA4 **22 active / 17 new**, first-user Google organic **10 users**, organic **14 sessions**; prior overlapping window had 23 / nine / 14. Not disjoint weekly cohorts; direct/repeated tool views may include Oct 1/9 QA. This session's live QA can affect future reports.
+- Scope: Flow-only validation, arithmetic range checks, Reset, action guards and print URL/note in shared runtime; Flow-only HTML/generator cache version `20261015`; new Flow regression suite and existing Layer Count generator-version assertion. Formula, defaults, SEO, links, CSS/sitemap/other public HTML unchanged.
+- QA PASS: six known / 96 positive / 37 invalid Flow cases; all nine suites, 82-page integrity/reachability, 42 Print contracts, local **66 six-width combinations / 42 finite defaults / six existing interaction controls**, target Copy/Reset/focus/menu/error checks. Widths **1440/1280/1024/900/768/390**. Actual headless Chrome A4 PDF one page, current inputs/result/URL/note; Poppler rendering visually inspected. Physical printer/native interactive dialog untested.
+- Protected existing homepage closing-tag warning and old Tools utility wording preserved. Homepage badges/links/order/styles unchanged, including KittyLaunch, LaunchBuff and BoostDomainRating. No API/DB/dependency/environment change.
+- Latest cluster remains Filament Recycling & Extrusion (Aug 24), latest growth upgrade Required Printer Count (Sep 7), latest expansion discovery Aug 26 NO-GO. Expansion considered but not entered because Priority A wins: zero new discovery families, not an expansion research NO-GO claim. Model Scale HOLD (146/1/26.91), Line Width OBSERVE (382/10/20.49).
+- Deployment: implementation push/CI/public verification pending; exact closeout below follows deployment. Next: observe matched search cohorts; reconsider Model Scale only with narrow evidence; track Coverage/organic without QA attribution errors.
+
+## Previous operational state — 2026-10-09
 
 - Weekly decision: **FIX — technical defect corrected**, Layer Count decimal-boundary rounding. Public 0.8 mm height / 0.2 mm first layer / 0.2 mm regular layer returned five instead of four; integer decimal arithmetic fixes this without snapping truly higher inputs down.
 - Start local/cached SHA `13c98f6871fcd099ba63f8f85612f029d0cdbca4`, actual remote `8a2b00d6711b536fd4f7ce75147f3c75b44af66c`; clean tree, 0 ahead / 6 behind, safe fast-forward to actual remote before work.
