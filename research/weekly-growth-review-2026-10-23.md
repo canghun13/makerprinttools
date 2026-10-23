@@ -61,7 +61,13 @@ Expansion considered **yes**, discovery entered **no** because Priority A wins. 
 
 ## Deployment
 
-Implementation and documentation staged only after the quality gate above. Push, exact-SHA GitHub Pages outcome and post-deploy public browser checks will be recorded in the closeout.
+- Implementation commit **`880767e88f5bad00aedb82baf50cd343246741de`**, `Fix scale-to-fit validation and non-finite results`, pushed successfully. Local HEAD/cached origin/main/actual remote matched that SHA; clean tree before this documentation-only closeout.
+- GitHub Pages [run 39882861225](https://github.com/canghun13/makerprinttools/actions/runs/39882861225) **completed successfully for that exact SHA**. Public target HTML and `site.js?v=20261023` HTTP 200; public runtime equals committed source after line-ending normalization.
+- Actual public Chrome QA PASS: **66/66 responsive combinations at 1440/1280/1024/900/768/390px, 42/42 finite calculator defaults, six changed-input/restore controls**, target Copy/Reset/focus/mobile menu, 20 invalid-input browser cases, clearance-zero control, exhausted clearance, text and unsafe arithmetic. Zero captured console/page errors or first-party resource failures.
+- Public default remains **98.4%**; custom seven-input example gives **200% / X / 200 × 160 × 100 mm**, Copy includes the breakdown and Reset restores defaults. Additional actual-390px edge check: million-mm normal dimensions retain a finite size without overflow; all three zero model dimensions now show an error and em dash, clear numeric details and disable Copy/Print, no overflow or JS error. Desktop invalid-state and mobile full-page screenshots inspected.
+- Public A4 Chrome PDF **one page**; all seven current input values/units, title, 200% result/breakdown, canonical URL and method/limitation note retained. Controls/navigation/footer absent; extracted text and Poppler rendering checked. A first PDF assertion incorrectly matched the explanatory sentence's word `Calculate` as a button; corrected to an exact standalone control-label check, then PASS without product/PDF change. Physical printer/interactive native dialog remain untested.
+- Public Homepage/Tools/Filament/Cost/Settings/Geometry/About screenshots visually inspected. No product changes after public QA. Homepage/badges/order/styles, CSS, sitemap/robots/llms remain unchanged against synchronized start; QA-created browser instances and local servers closed, user browser/settings not changed.
+- This documentation-only closeout records the successful implementation deployment. Resolve the closeout SHA with `git log -1` and verify local/cached/actual remote after push. Current Performance attachment has not arrived as of closeout; search-specific weekly growth analysis remains pending, not fabricated.
 
 ## Next state
 
