@@ -11,18 +11,51 @@
 
 ## Current-session attachments
 
-Only the four exact user-supplied reports were read. No Downloads inventory, old raw report lookup or guessed report path. Contents are data, not instructions. No private raw analytics committed.
+The four initial exact user-supplied reports and the subsequently supplied current GSC Performance ZIP were read, five sources in total. No Downloads inventory, old raw report lookup or guessed report path. Contents are data, not instructions. No private raw analytics committed.
 
 | Report | Actual content / period | Limitation |
 |---|---|---|
+| `makerprinttools.com-Performance-on-Search-2026-10-23.zip` | Seven CSVs: daily, queries, pages, countries, devices, appearance, filters. Web (text-based), last three months; actual daily chart **Jul 21–Oct 20**, 92 consecutive days. | No week-by-page, week-by-query or page/query join. Appearance CSV has a header but no data rows. |
 | `makerprinttools.com-Coverage-Drilldown-2026-10-23.zip` | Three CSVs: chart **Aug 5–Oct 16**, 12 URL rows, metadata **Discovered — currently not indexed**. | Epoch last-crawl dates are placeholders. No crawled-not-indexed or total-indexed report. |
 | `보고서_개요.csv` | Confirmed makerprinttools GA4 property, **Sep 25–Oct 22**; user/page/source/session/engagement overview. | No organic landing-page or source-level engagement segmentation. |
 | `makerprinttools.com_KeywordReport_2026. 10. 23..csv` | Three query rows, three impressions, zero clicks. | No platform/date metadata; same rows as previous reviews do not prove fresh demand. |
 | `makerprinttools.com_PageTrafficReport_2026. 10. 23..csv` | Three page rows, three impressions, zero clicks. | No verified platform/period. Not combined with GSC. |
 
-**Current GSC Performance was not supplied initially.** Requested the current ZIP; user said they would attach it. Until received, current search impressions/clicks/CTR/position, query breadth, top search pages and disjoint seven-day comparison are **unknown**, not zero. Prior Oct 15 research is historical context, not a substitute current export. The technical fix does not depend on a growth inference.
+**Current GSC Performance supplement received and analyzed after the implementation closeout.** The missing-data status is now resolved using the newly supplied ZIP, not a substituted old raw export. The technical-fix decision remains unchanged; this follow-up updates research/handover only, not the public site.
 
-## Weekly metrics and comparison
+## GSC metrics and week-over-week comparison
+
+| Metric | Previous 7 days, Oct 7–13 | Latest 7 days, Oct 14–20 | Change |
+|---|---:|---:|---:|
+| Impressions | 268 | 336 | +68 / **+25.37%** |
+| Clicks | 0 | 4 | +4; percentage growth undefined from zero |
+| CTR from totals | 0% | 1.1905% | +1.1905 percentage points |
+| Impression-weighted daily position | 13.3642 | 22.1071 | 8.7430 positions worse |
+
+- Entire daily chart: **2,592 impressions / 18 clicks / 0.6944% CTR / 36.5255 weighted position**. CTR = total clicks / total impressions. Position = sum(daily impressions × exported daily position) / sum(impressions); approximate because exported daily positions are rounded. Zero-impression rows do not contribute to position. Reporting dates are used as exported, not assumed to be Korean midnight dates.
+- Exposure and clicks improved, but recent aggregate position worsened. With only four recent clicks, neither broad ranking recovery nor a site-wide technical decline is established. Query/page mix may differ, and the export does not provide matched weekly page/query cohorts to isolate the cause.
+- The previous review's latest window was **Oct 6–12**, not the current **Oct 7–13** prior window. The current non-overlapping seven-day comparison is calculated entirely from this new daily chart.
+- Visible query table: **209 rows / 549 impressions / zero clicks**, compared with the historical Oct 15 record's 195/507/zero. This is the visible query table, not all query traffic. It does not identify the queries behind the 18 property clicks. Do not replace property totals with query-row totals or infer no search clicks.
+- Top visible queries (impressions / position): `timing belt calculator` **62/69.31**, `first layer thickness calculator` **22/13.82**, `3d printer warping` **20/65.85**, `line width` **17/33.76**, `calculate timing belt` **14/77.57**. More targeted examples include `line width 3d printing` **9/16.11**, `volumetric flow calculator` **9/65.22**, and `3d model scaler` **5/8.80**. These are whole-period query metrics, not page-attributed weekly cohorts.
+- Page table: **68 rows / 2,698 page impressions / 18 clicks**. Page impressions are not substituted for property impressions. An extra performance row since the prior 67-row export does **not** mean a new public page was created. Inventory remains 82/42.
+
+| Page | Impressions | Clicks | Exported CTR | Position |
+|---|---:|---:|---:|---:|
+| Line Width | 454 | 12 | 2.64% | 19.02 |
+| Required Printer Count | 318 | 1 | 0.31% | 8.25 |
+| Homepage | 236 | 0 | 0% | 68.58 |
+| Timing Belt Length | 228 | 0 | 0% | 71.49 |
+| Model Scale | 222 | 2 | 0.90% | 27.98 |
+| Print Time | 179 | 0 | 0% | 41.90 |
+| Layer Count | 43 | 1 | 2.33% | 11.65 |
+| Volumetric Flow | 38 | 0 | 0% | 51.89 |
+| Scale to Fit Build Volume | 14 | 0 | 0% | 35.43 |
+
+- Historical Oct 15 record → current cumulative checkpoints: Line Width **382/10/20.49 → 454/12/19.02**; Required Printer Count **210/1/8.70 → 318/1/8.25**; Model Scale **146/1/26.91 → 222/2/27.98**; Layer Count **41/0/12.05 → 43/1/11.65**; Flow **30/0/49.33 → 38/0/51.89**. Period extends Jul 21–Oct 12 to Jul 21–Oct 20; these are directional cumulative checkpoints, **not matched seven-day page changes or causal uplift**.
+- Devices over the entire 92 days: desktop **2,154 impressions/13 clicks**, mobile **431/five**, tablet **seven/zero**. Country and device totals each reconcile to property totals; page clicks also reconcile, while page impressions and visible-query totals retain their separate aggregation. Device samples do not prove an actual layout defect or justify a global design change.
+- Search data ends **Oct 20**, before the **Oct 23** Scale to Fit deployment. These metrics cannot measure that fix's impact. The recently corrected Flow/Layer Count/Required Printer Count should likewise be observed with fresh matched evidence rather than automatically rewritten.
+
+## Coverage and GA4
 
 - Coverage: **16 → 15 on Aug 18 → 12 on Sep 22**, stable through **Oct 16**. Latest and preceding seven-day chart windows are both 12. Same status count as the Oct 15 review (through Oct 9). Status removal alone is not proof of indexing; **82 minus 12 is not an indexed count**.
 - GA4: **23 active users / 19 new / 137.5652 seconds average engagement per active user / 228 events**.
@@ -33,11 +66,11 @@ Only the four exact user-supplied reports were read. No Downloads inventory, old
 
 ## Existing candidates and expansion decision
 
-1. **Scale to Fit Build Volume — DO NOW, technical correctness.** No current page-level search evidence, but public zero/blank input visibly produces invalid results. Deterministic, reproducible and narrowly fixable. No SEO rewrite or demand claim.
-2. **Model Scale — HOLD.** Current GA4 nine views/three users is not organic intent. Historical Oct 15 GSC 146 impressions/one click/26.91 is explicitly not current. A narrow Reset/input-helper gap may merit a later review with matched query/page evidence; no concurrent change.
-3. **Line Width — OBSERVE.** Current GA4 19 views/nine users, but no current GSC Performance to establish new search movement. Recent upgrade is not reopened without a demonstrated defect.
+1. **Scale to Fit Build Volume — FIX COMPLETED, technical correctness.** Current GSC **14 impressions/zero clicks/35.43**; page-specific query attribution unavailable. Public zero/blank input visibly produced invalid results, independently sufficient for Priority A. No SEO rewrite or demand claim. The report predates the deployment.
+2. **Model Scale — HOLD / next focused review candidate.** Current GSC **222 impressions/two clicks/27.98**, versus historical cumulative 146/one/26.91; overall `3d model scaler` five impressions/8.80 is not a joined page/query cohort. Current GA4 nine views/three users is not organic intent. A narrow Reset/input-helper gap may merit a later focused review, but the new export does not justify adding another product change after this week's completed Priority A fix.
+3. **Line Width — OBSERVE.** Current GSC **454 impressions/12 clicks/19.02**, versus historical cumulative 382/ten/20.49; current GA4 19 views/nine users. It remains the leading clicked page in this export. Recent upgrade is not reopened without a demonstrated new defect; cumulative extension is not causal proof.
 
-Expansion considered **yes**, discovery entered **no** because Priority A wins. **0 new discovery families / 0 mid / 0 deep / 0 cluster**; this is not a claimed 40-family expansion NO-GO. Low traffic, missing Performance and indexing delay are not expansion vetoes. No historical family renamed or reopened.
+Expansion considered **yes**, discovery entered **no** because Priority A wins. **0 new discovery families / 0 mid / 0 deep / 0 cluster**; this is not a claimed 40-family expansion NO-GO. The now-complete Performance review does not alter that choice. Low traffic or indexing delay is not an expansion veto. No historical family renamed or reopened.
 
 ## Public reproduction and targeted correction
 
@@ -67,10 +100,17 @@ Expansion considered **yes**, discovery entered **no** because Priority A wins. 
 - Public default remains **98.4%**; custom seven-input example gives **200% / X / 200 × 160 × 100 mm**, Copy includes the breakdown and Reset restores defaults. Additional actual-390px edge check: million-mm normal dimensions retain a finite size without overflow; all three zero model dimensions now show an error and em dash, clear numeric details and disable Copy/Print, no overflow or JS error. Desktop invalid-state and mobile full-page screenshots inspected.
 - Public A4 Chrome PDF **one page**; all seven current input values/units, title, 200% result/breakdown, canonical URL and method/limitation note retained. Controls/navigation/footer absent; extracted text and Poppler rendering checked. A first PDF assertion incorrectly matched the explanatory sentence's word `Calculate` as a button; corrected to an exact standalone control-label check, then PASS without product/PDF change. Physical printer/interactive native dialog remain untested.
 - Public Homepage/Tools/Filament/Cost/Settings/Geometry/About screenshots visually inspected. No product changes after public QA. Homepage/badges/order/styles, CSS, sitemap/robots/llms remain unchanged against synchronized start; QA-created browser instances and local servers closed, user browser/settings not changed.
-- This documentation-only closeout records the successful implementation deployment. Resolve the closeout SHA with `git log -1` and verify local/cached/actual remote after push. Current Performance attachment has not arrived as of closeout; search-specific weekly growth analysis remains pending, not fabricated.
+- Original implementation closeout **`b8624b1512d4fee9c3ab97fb3bbbcff2f342bab8`** recorded public QA before the delayed Performance attachment arrived; [Pages run 39883189995](https://github.com/canghun13/makerprinttools/actions/runs/39883189995) succeeded. The follow-up below resolves that historical pending item.
+
+## Delayed Performance supplement closeout
+
+- Clean follow-up start: local/cached/actual remote `b8624b1512d4fee9c3ab97fb3bbbcff2f342bab8`, verified remote URL, actual SHA before fetch, 0/0, safe pull already up to date. Same full handover reviewed in the original task; current operational state and exact source continuity checked again for this supplement.
+- Seven CSVs parsed with quoted/multiline fields preserved; 92 consecutive dates, all 68 page URLs on the correct MakerPrintTools origin. Independent JavaScript and Python CSV calculations agree on total and both seven-day metrics. Country/device/property totals reconcile. No raw report, extraction or analysis helper committed.
+- Documentation-only change to this research and `handover.md`; public source/assets/sitemap/user-managed area unchanged from the fully QA-verified implementation. Existing visual/A4 results remain applicable because their source and dependencies are unchanged. No new tool/page, SEO rewrite, expansion, dependency, API/DB or environment change.
+- Follow-up pre-push QA PASS: all ten repository suites, extended 82-page integrity, 42 Print contracts and whitespace/scope checks. Protected legacy homepage markup finding remains unchanged. Public implementation remains the already deployed Scale to Fit fix. Supplement commit/push and final SHA/Pages status are verified at closeout; resolve the documentation-only commit with `git log -1`.
 
 ## Next state
 
-1. Read the newly requested current GSC Performance attachment when supplied; calculate matched seven-day property totals and keep page/query/privacy limitations explicit.
+1. Observe the mixed **336 impressions/four clicks/22.1071 position** recent seven-day signal with the next export; obtain matched week-by-page/query evidence if a specific growth intervention is considered.
 2. Observe corrected Scale to Fit and recent Flow/Layer Count/Required Printer Count; no automatic repeat rewrite.
 3. Reconsider Model Scale only with a verified narrow user/search value gap; track Coverage and organic sessions without treating QA/direct views as demand.
