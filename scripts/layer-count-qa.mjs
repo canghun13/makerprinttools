@@ -63,7 +63,7 @@ new Function('fs','path','console',generator)({mkdirSync(){},writeFileSync(file,
 let layersFound=false;
 for(const [file,html]of outputs){
  const target=file.includes('layer-count-calculator');
- assert.ok(html.includes(target?'/assets/js/site.js?v=20261009':file.includes('volumetric-flow-calculator')?'/assets/js/site.js?v=20261015':'/assets/js/site.js"'),`unexpected runtime version: ${file}`);
+ assert.ok(html.includes(target?'/assets/js/site.js?v=20261009':file.includes('volumetric-flow-calculator')?'/assets/js/site.js?v=20261015':file.includes('model-scale-calculator')?'/assets/js/site.js?v=20261028':'/assets/js/site.js"'),`unexpected runtime version: ${file}`);
  if(target)layersFound=true;
 }
 assert.ok(layersFound,'Layer Count missing from generator');

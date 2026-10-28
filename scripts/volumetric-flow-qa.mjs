@@ -45,7 +45,7 @@ new Function('fs','path','console',generator)({mkdirSync(){},writeFileSync(file,
 let targetFound=false;
 for(const [file,html]of outputs){
  const target=file.includes('volumetric-flow-calculator'),layers=file.includes('layer-count-calculator');
- assert.ok(html.includes(target?'/assets/js/site.js?v=20261015':layers?'/assets/js/site.js?v=20261009':'/assets/js/site.js"'));
+ assert.ok(html.includes(target?'/assets/js/site.js?v=20261015':layers?'/assets/js/site.js?v=20261009':file.includes('model-scale-calculator')?'/assets/js/site.js?v=20261028':'/assets/js/site.js"'));
  if(target)targetFound=true;
 }
 assert.ok(targetFound);
