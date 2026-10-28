@@ -99,7 +99,13 @@ Expansion considered **yes**; discovery entered **no**, because Priority A wins.
 
 ## Deployment
 
-Implementation commit/push, exact-SHA Pages result and actual public functional/responsive/print verification will be recorded in the deployment closeout. No product changes after successful verification without repeating affected QA.
+- Implementation **`75a9626fba694fb1e9c2a88a2cd4faed6102b041`**, `Fix model scale result validation and print guards`, pushed successfully. Local HEAD/cached origin/main/actual remote matched; clean tree before this documentation-only closeout.
+- GitHub Pages [run 40647806358](https://github.com/canghun13/makerprinttools/actions/runs/40647806358) **completed successfully for that exact SHA**. Public target HTML and `site.js?v=20261028` HTTP200; public runtime equals committed source after line-ending normalization. Current12 Coverage probes, HTTPS apex/robots/sitemap checks still pass.
+- Actual public Chrome QA PASS: **66/66 combinations across11 distinct pages and six explicitly confirmed widths (1440/1280/1024/900/768/390)**, **42/42 finite defaults**, **six existing changed-input/restore controls**. Zero captured JS/console errors or first-party resource failures, overflow, clipped controls/brand or header/H1 overlap.
+- Target public default **150%/337.5%/168.8g**, changed80/160/50 **200%/800%/400g**, Copy/full breakdown, Reset/default restore, keyboard focus and mobile menu PASS. Seven ordinary invalid cases plus invalid text/unsafe finite arithmetic clear output and disable Copy/Print. Optional blank/zero weight stays valid and omits weight estimate. Actual390px large finite150,000% result fits without overflow.
+- Public A4 Chrome PDF **one page**: title, all three current values/units,200%/factor2/800%/400g, canonical URL and limitation note retained; controls/navigation/footer absent. Extracted text and Poppler rendering checked. Public target1440px default/error,390px full page and A4 screenshots visually inspected. Required representative pages were visually inspected locally and received full public browser regression; physical printer/native interactive dialog untested.
+- No product changes after public verification. Homepage/badges/source/order/styles, shared CSS, sitemap/robots/llms unchanged against start. QA browser instances and local servers closed; user browser windows/settings were not modified. This session's live QA can affect future direct/pageview analytics, not current exported search demand.
+- Final closeout commit is this documentation-only research/handover update. Resolve its SHA using `git log -1`, compare local/cached/actual remote after push, and inspect the exact-SHA Pages outcome. No invented implementation or indexing impact is claimed.
 
 ## Next state
 
