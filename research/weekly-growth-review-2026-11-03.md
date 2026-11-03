@@ -98,7 +98,13 @@ Expansion considered **yes**,branch entered **no**,because PriorityA wins. Histo
 
 ## Deployment
 
-Pre-push product and quality gate complete. Implementation commit/push,exact-SHA Pages result and public post-deploy verification are recorded in the closeout after execution; not yet claimed at this checkpoint.
+- Implementation **`59c510937445d1b576a4bdb70e8aeba0838534a3`**, `Fix wall thickness decimal boundary and record guards`, pushed successfully. Local HEAD, cached origin/main and actual remote main matched; clean tree before this documentation-only closeout.
+- GitHub Pages [run41591716023](https://github.com/canghun13/makerprinttools/actions/runs/41591716023) completed **successfully for that exact SHA**. Public target HTML and `site.js?v=20261103` HTTP200. All **82 public HTML pages and eight infrastructure/runtime assets** match committed source after line-ending/outer-whitespace normalization. Self-canonicals, one GA loader/config per page, no accidental noindex, 12 Coverage Googlebot-UA probes, HTTPS apex redirects and unchanged sitemap PASS.
+- Public Chrome QA PASS: **72/72 combinations across12 distinct pages and six explicitly verified widths**, **42/42 finite calculator defaults**, six existing changed-input/restore controls. Zero captured JS/console/first-party resource errors, overflow, clipped controls/brand or header/H1 overlap.
+- Public Wall defaultfour; 2.1/.3/min2 now **seven walls /2.1mm /zero overage**. Genuine just-above remains eight, just-below seven, singular one; nine ordinary blank/zero/negative paths plus invalid text/minimum21/unsafe count clear results and disable Copy/Print. Reset, Copy/full breakdown, focus, mobile menu and actual390px five-million-wall finite result PASS.
+- Actual public A4 Chrome PDF **one page**: all three current inputs/units, title, seven-wall result/full breakdown, canonical and limitation note retained; controls/navigation/footer hidden. Extracted text and Poppler rendering inspected. Public target desktop, mobile full page, error and A4 screenshots visually checked; required representative pages already visually inspected locally and received the public browser regression. Physical printer/native interactive dialog untested.
+- No product changes after public QA. Homepage/user badges/order/styles, CSS, sitemap, robots and llms remain unchanged against start. Owned QA browser/server instances closed; no user browser/system settings modified. Public QA may affect future direct/pageview reports.
+- Final closeout is the documentation-only handover/research commit immediately after the implementation, titled `Record wall thickness deployment and November weekly review`. Resolve its SHA with `git log -1`, compare local/cached/actual remote after push, and verify its exact-SHA Pages run. This avoids a self-referential commit hash inside its own content.
 
 ## Next state
 
