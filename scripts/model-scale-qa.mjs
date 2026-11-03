@@ -44,6 +44,6 @@ const outputs=new Map();
 const generator=fs.readFileSync(new URL('./generate-calculator-pages.mjs',import.meta.url),'utf8').replace("import fs from 'node:fs';import path from 'node:path';",'').replace(/^const root=.*$/m,"const root='/fixture';");
 new Function('fs','path','console',generator)({mkdirSync(){},writeFileSync(file,html){outputs.set(file,html)}},path,{log(){}});
 let targetFound=false;
-for(const[file,html]of outputs){const target=file.includes('model-scale-calculator'),flow=file.includes('volumetric-flow-calculator'),layers=file.includes('layer-count-calculator');assert.ok(html.includes(target?'/assets/js/site.js?v=20261028':flow?'/assets/js/site.js?v=20261015':layers?'/assets/js/site.js?v=20261009':'/assets/js/site.js"'));if(target)targetFound=true}
+for(const[file,html]of outputs){const target=file.includes('model-scale-calculator'),flow=file.includes('volumetric-flow-calculator'),layers=file.includes('layer-count-calculator');assert.ok(html.includes(target?'/assets/js/site.js?v=20261028':flow?'/assets/js/site.js?v=20261015':layers?'/assets/js/site.js?v=20261009' :file.includes('wall-thickness-calculator')?'/assets/js/site.js?v=20261103':'/assets/js/site.js"'));if(target)targetFound=true}
 assert.ok(targetFound);
 console.log(`Model Scale QA PASS: ${cases.length} known cases, ${grid} normal combinations, ${invalid} invalid/range cases; optional weight, error action guards and scoped generator version.`);
