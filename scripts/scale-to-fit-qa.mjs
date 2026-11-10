@@ -33,5 +33,5 @@ const outputs=new Map();
 const generator=fs.readFileSync(new URL('./generate-phase5-pages.mjs',import.meta.url),'utf8').replace("import fs from 'node:fs';import path from 'node:path';",'').replace("new URL('..',import.meta.url)","new URL('file:///fixture/')");
 new Function('fs','path','console',generator)({mkdirSync(){},writeFileSync(file,html){outputs.set(file,html)}},path,{log(){}});
 assert.equal(outputs.size,5);
-for(const[file,html]of outputs)assert.ok(html.includes(file.includes('scale-to-fit-build-volume-calculator')?'/assets/js/site.js?v=20261023':'/assets/js/site.js"'));
+for(const[file,html]of outputs)assert.ok(html.includes(file.includes('scale-to-fit-build-volume-calculator')?'/assets/js/site.js?v=20261023' :file.includes('support-material-estimator')?'/assets/js/site.js?v=20261110':'/assets/js/site.js"'));
 console.log(`Scale to Fit QA PASS: ${cases.length} known cases, ${grid} positive combinations, ${invalid} invalid/range cases; finite results, zero clearance, error action guards and scoped generator version.`);
