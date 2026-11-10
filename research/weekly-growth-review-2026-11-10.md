@@ -100,7 +100,14 @@ Expansion considered **yes**, entered **no** because Priority A wins. Implemente
 
 ## Deployment
 
-Pre-push quality gate complete. Implementation push, exact-SHA Pages outcome and post-deploy public QA will be recorded after actual verification; not yet claimed at this checkpoint.
+- Implementation **`cd3e469df24b5c87334ebd0d41b29a122b116db1`**, `Fix support material compound allowance breakdown`, pushed successfully. Local HEAD/cached origin/main/actual remote main matched and tree was clean before this documentation-only closeout.
+- GitHub Pages [run42731823886](https://github.com/canghun13/makerprinttools/actions/runs/42731823886) **completed successfully for that exact SHA**. Public target and `site.js?v=20261110` HTTP200; all **82 public HTML pages and eight infrastructure/runtime assets** match committed source after line-ending/outer-whitespace normalization. Current canonical/GA4/noindex,12 Coverage-UA,HTTPS apex,robots/sitemap checks PASS.
+- Public Chrome QA PASS: **78/78 combinations across13 distinct pages and six actual widths**, **42/42 finite defaults**, six existing changed-input/restore controls. Zero captured JS/console/first-party resource errors, overflow, clipped controls/brand or header/H1 overlap.
+- Target public default27g/20.75%, changed100/1/20/10 →132g/100g base/20g interface/12g reserve/32%, zero/single/max-rate controls, Reset, Copy/full breakdown,12 ordinary invalid cases plus text/unsafe arithmetic, focus/mobile menu and actual390px finite1,320,000g result PASS. Errors clear stale output and block Copy/Print.
+- Actual public A4 Chrome PDF **one page**: four current input values/units, title,132g/full staged breakdown,canonical and limitation note; controls/nav/footer hidden. Text and Poppler rendering inspected. Superscript text-extraction artifact only; rendered units correct. Target public desktop/mobile/A4 visually inspected. Required representative screenshots were inspected locally and all received public browser regression. Physical printer/native interactive dialog untested.
+- Final review additionally normalized percentage factors before multiplication, so a finite total near the upper numeric range is not rejected merely because an intermediate base×percent overflows. Separate `1e308` finite-result regression passes. All13 suites and the full local78-case browser matrix reran against the exact implementation before push.
+- No product change after public QA. User-managed homepage/badges/footer links/order/styles, CSS, sitemap, robots and llms unchanged against start. Owned QA servers/browser instances closed; no user system/browser settings changed. This public QA can affect future direct/pageview reports.
+- Final closeout is the documentation-only research/handover commit immediately after implementation, titled `Record support material deployment and weekly review`. Resolve its SHA via `git log -1`, compare local/cached/actual remote after push and inspect its exact-SHA Pages outcome; no self-referential hash is embedded in its own content.
 
 ## Next state
 
