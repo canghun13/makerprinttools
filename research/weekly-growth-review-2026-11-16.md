@@ -89,7 +89,13 @@ Expansion considered yes, entered no because Priority A wins. Implemented/HOLD/R
 
 ## Deployment
 
-Implementation is locally verified; commit/push, exact-SHA Pages outcome and public browser/PDF verification are pending at this pre-push checkpoint. Update this section after observing deployment, without treating a local PASS as production proof.
+- Implementation **`2cf8fb0855b6d10e2897cfdf02421b13847fa3d6`**, `Fix resin bottle yield decimal inventory boundaries`, pushed successfully. Local HEAD/cached origin/main/actual remote matched; clean tree before this documentation-only closeout.
+- GitHub Pages [run43820538327](https://github.com/canghun13/makerprinttools/actions/runs/43820538327) **completed successfully for that exact SHA**. All **82 public HTML pages/eight infrastructure/runtime assets** match committed source after line-ending/outer-whitespace normalization. Target runtime `site.js?v=20261116`, current canonical/GA4/noindex,12 Coverage-UA,HTTPS apex,robots/sitemap checks PASS.
+- Public Chrome QA **78/78 combinations across13 distinct pages/six actual widths**,42/42 finite defaults,six changed/restore controls PASS. No captured JS/console/first-party resource error, overflow, clipped controls/brand or header/H1 overlap.
+- Public target default13, exact660/100/10%/six →sixprints/onebottle, ordinary zero-allowance control, genuinely above/below boundaries, singular/zero yield,13 ordinary invalid browser cases plus text/overflow,Copy/Reset/focus/menu and actual390px1,000,000prints result PASS. Invalid Print remains blocked and stale output clears.
+- Actual public Chrome A4 portrait PDF **one page**: four current input values/units/title,sixprints,110ml/660ml/onebottle breakdown,canonical/note; controls/nav/footer hidden. Text assertions and Poppler-rendered page inspected. Target public desktop/mobile visually inspected; required representatives inspected locally and received full public browser regression. Physical printer/native interactive dialog untested.
+- No product change after public QA. Homepage/badges/footer links/order/styles,CSS,sitemap/robots/llms unchanged. Owned QA browsers/servers closed. No dependency/system configuration change or private raw report committed. Public QA can affect future direct/pageview reports.
+- Final closeout is the documentation-only research/handover commit immediately after implementation, titled `Record resin yield deployment and weekly review`. Resolve its SHA with `git log -1`, compare local/cached/actual remote after push and inspect the exact-SHA Pages outcome. No self-referential hash embedded in its own content.
 
 ## User-managed area and next state
 
