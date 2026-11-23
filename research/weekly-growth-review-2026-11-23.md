@@ -90,7 +90,13 @@ Expansion considered yes, entered no because Priority A wins. Latest implemented
 
 ## Deployment
 
-Local implementation and pre-push quality gate complete. Commit/push, exact-SHA Pages outcome and public browser/PDF verification are pending at this checkpoint. Replace this checkpoint with observed deployment evidence, not a local-only success claim.
+- Implementation **`3e538e62086cad51a77d551247a1152db5d369ae`**, `Fix break-even decimal threshold and print record`, pushed successfully. Local HEAD/cached origin/main/actual remote matched and tree clean before this documentation-only closeout.
+- GitHub Pages [run45137578314](https://github.com/canghun13/makerprinttools/actions/runs/45137578314) **completed successfully for that exact SHA**. All **82 public HTML pages/eight infrastructure/runtime assets** match committed source after line-ending/outer-whitespace normalization. Target runtime `site.js?v=20261123`; current canonical/GA4/noindex,11 Coverage-UA,HTTPS apex,robots/sitemap checks PASS.
+- Public Chrome **84/84 combinations across14 distinct pages/six actual widths**,42/42 finite defaults,six changed/restore controls PASS. Zero captured JS/console/first-party resource errors,overflow,clipped controls/brand or header/H1 overlap.
+- Target default12, corrected185/3/1/5% →100units/1.85contribution/300revenue, zero-fee control, genuine over/under boundaries, zero/singular/high-fee cases,13 ordinary invalid browser cases plus text/unsafe arithmetic,Copy/Reset/focus/menu and actual390px1,000,000units PASS. Invalid records clear results and block Print/Copy.
+- Actual public Chrome A4 portrait PDF **one page**: four current values/percentage unit,title,100units/full breakdown,canonical/note; controls/nav/footer/Production navigation hidden. Text and final Poppler rendering inspected. Target public desktop/mobile inspected; required representatives inspected locally and received full public regression. Physical printer/native interactive dialog untested.
+- No product change after public QA. Homepage/badges/footer links/order/styles,shared CSS,sitemap/robots/llms unchanged. Owned QA browsers/servers closed. No environment install/reset/settings changes or private raw reports committed. Public QA can affect future direct/pageviews.
+- Final closeout is the documentation-only research/handover commit immediately after implementation, titled `Record break-even deployment and weekly review`. Resolve its SHA with `git log -1`, compare local/cached/actual remote after push and inspect the exact-SHA Pages outcome. No self-referential hash embedded in its own content.
 
 ## User-managed area and next state
 
